@@ -52,10 +52,10 @@
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
 		}
-	$sql="SELECT * FROM `pagina` WHERE  usuario='$usuario' and clave='$clave' " ;
-	$result = $conn->query($sql); 
+	  $sql="SELECT * FROM `pagina` WHERE  usuario='$usuario' and clave='$clave' " ;
+	  $result = $conn->query($sql); 
 
-	if ($result->num_rows > 0) {
+	  if ($result->num_rows > 0) {
 		$row = $result->fetch_assoc();
 		if ($row["nivel"]==5){
 		echo"<script> location='Indexadmi.php';</script>";
