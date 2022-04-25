@@ -69,7 +69,6 @@
      echo "<a href='' class='waves-effect waves-light btn-large shake-slow grey'> REINTENTAR  </a>
 	</div>";
 	}
-
 	
 }
 ?>
