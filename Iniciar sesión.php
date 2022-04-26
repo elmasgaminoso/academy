@@ -40,18 +40,7 @@
 	$usuario=$_POST['usuario'];
 	$clave=$_POST['clave'];
 
-	$servername = "localhost";
-	$username = "root";
-	$password = "";
-	$dbname = "academy";
-
-
-	// Create connection
-		$conn = new mysqli($servername, $username, $password, $dbname);
-		// Check connection
-		if ($conn->connect_error) {
-			die("Connection failed: " . $conn->connect_error);
-		}
+	include('config.php');
 	  $sql="SELECT * FROM `pagina` WHERE  usuario='$usuario' and clave='$clave' " ;
 	  $result = $conn->query($sql); 
 
