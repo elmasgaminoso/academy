@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/1.css">
 		<!--<link rel="shortcut icon" type="image/png" href="img/apple-icon-180x180.png"/>-->
 
-    <title>Academy Home By Juan y Jesus</title>
+    <title>Iniciar sección Academy</title>
   </head>
   <body>
   <div class="container center">

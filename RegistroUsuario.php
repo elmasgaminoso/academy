@@ -108,7 +108,7 @@
         $nivel=$_POST['nivel'];
 
     
-        $sql = "INSERT INTO `pagina`( `usuario`, `clave`, `correo`, `telefono`, `nombre`, `fecha de nacimiento`, `genero`, `nivel`) VALUES
+        $sql = "INSERT INTO `usuarios`( `usuario`, `clave`, `correo`, `telefono`, `nombre`, `fecha de nacimiento`, `genero`, `nivel`) VALUES
          ('$usuario', '$clave', '$email', '$telefono', '$nombre', '$fechanac','$genero', '$nivel')";
     
         if ($conn->query($sql) === TRUE) {
