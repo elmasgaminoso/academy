@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/1.css">
 		<!--<link rel="shortcut icon" type="image/png" href="img/apple-icon-180x180.png"/>-->
 
-    <title>Academy Home By Juan y Jesus</title>
+    <title>Iniciar sección Academy</title>
   </head>
   <body>
   <div class="container center">
@@ -46,7 +46,7 @@
 
 	  if ($result->num_rows > 0) {
 		$row = $result->fetch_assoc();
-		if ($row["nivel"]==5){
+		if ($row["nivel"]==2){
 		echo"<script> location='Indexadmi.php';</script>";
 	}else{
 		echo"<script> location='index.php';</script>";
