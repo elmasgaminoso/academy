@@ -41,7 +41,7 @@
 	$clave=$_POST['clave'];
 
 	include('config.php');
-	  $sql="SELECT * FROM `pagina` WHERE  usuario='$usuario' and clave='$clave' " ;
+	  $sql="SELECT * FROM `usuarios` WHERE  usuario='$usuario' and clave='$clave' " ;
 	  $result = $conn->query($sql); 
 
 	  if ($result->num_rows > 0) {
