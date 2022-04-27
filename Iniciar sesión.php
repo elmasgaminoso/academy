@@ -46,7 +46,7 @@
 
 	  if ($result->num_rows > 0) {
 		$row = $result->fetch_assoc();
-		if ($row["nivel"]==5){
+		if ($row["nivel"]==2){
 		echo"<script> location='Indexadmi.php';</script>";
 	}else{
 		echo"<script> location='index.php';</script>";
