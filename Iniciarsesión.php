@@ -46,19 +46,23 @@
 
 	  if ($result->num_rows > 0) {
 		$row = $result->fetch_assoc();
-		if ($row["nivel"]==2){
-		echo"<script> location='Indexadmi.php';</script>";
+		if ($row["nivel"]==3){
+		echo"<script> location='RegistroUsuario.php';</script>";
 	}else{
-		echo"<script> location='index.php';</script>";
+    if ($row["nivel"]==2){
+		echo"<script> location='InicioProfesor.php';</script>";
 		}
+  }else{
+    if ($row["nivel"]==2){
+    echo"<script> location='InicioEstudiante.php';</script>";
+    }
 	}  else {
 	echo  "<div class='container center'>
  <h4>Datos incorrectos </h4><br><br>";
 
      echo "<a href='' class='waves-effect waves-light btn-large shake-slow grey'> REINTENTAR  </a>
 	</div>";
-	}
-	
+	}	
 }
 ?>
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
