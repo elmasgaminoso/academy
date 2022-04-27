@@ -13,12 +13,13 @@
 </head>
     <body>
       <div class="container">
-        <div class="row center">
-           <h1>
-      <span class="text-wrapper">
-        <span class="letters">Registrar a Usuario</span>
-      </span>
-    </h1>
+        <div class="row center">	
+          <h4 class="fuente1 center">Bienvenido a la sesión de administrador, en esta página podrá administrar la base de datos, creando, editando y eliminando registros..</h4>
+          <h1>
+            <span class="text-wrapper">
+              <span class="letters">Registrar a Usuario</span>
+            </span>
+          </h1>
         </div>
           <div class="row">
         <form class="col s12" method="post" action="">
