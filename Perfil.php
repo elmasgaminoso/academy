@@ -42,10 +42,9 @@ $result = $conn->query($sql);
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="css/materialize.min.css">
-	<link rel="stylesheet" href="css/1.css">
+    <?php
+        include ('head.php');
+    ?>
 <title>Documento sin título</title>
 </head>
 <body >
