@@ -1,5 +1,9 @@
 <?php
  session_start();
+ include("Config.php");
+    $sql = "SELECT * FROM `usuarios` ";
+    $result = $conn->query($sql); 
+    
  ?>
 <!DOCTYPE html>
 <html>
@@ -13,8 +17,14 @@
     <div class="container">
         <div class="row center">	
           <h1 class="fuente1 center">Bienvenido a la sesión de Profesor.</h1>
-
-
+    <?php
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+        "<a class='waves-effect waves-light btn-large shake-slow grey' href='perfil.php?var=".$row["id"]."'>Perfil</a>";
+            }
+        }
+    ?>
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
         <script type="text/javascript">

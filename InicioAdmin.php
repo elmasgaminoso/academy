@@ -1,5 +1,8 @@
 <?php
  session_start();
+ include("Config")
+ $sql = "SELECT * FROM `usuarios` ";
+$result = $conn->query($sql); 
  ?>
 <!DOCTYPE html>
 <html>

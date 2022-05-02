@@ -1,4 +1,5 @@
 <?php
+ session_start();
 if (isset ($_POST['modificar'])){
 	$id=$_POST['id'];
 	$usuario=$_POST['usuario'];
@@ -9,7 +10,7 @@ if (isset ($_POST['modificar'])){
 	$fechanac=$_POST['fechadenac'];
 	$nivel=$_POST['nivel'];
 
-include("config.php");
+    include("Config.php");
 $sql = "UPDATE usuarios SET usuario='$usuario',clave='$clave',correo='$correo',telefono='$telefono',nombre='$nombre',`fecha de nacimiento`='$fechanac',nivel='$nivel'  WHERE id='$id'";
 
 if ($conn->query($sql) === TRUE) {
@@ -22,13 +23,13 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
 	$row = $result->fetch_assoc();
 }
-echo "<script> location='InicioAdmin.php';</script>";	
+echo "<script> location='Registrosadmi.php';</script>";	
 }
 
 if (isset ($_GET['var'])){
 	$id=$_GET['var'];
 	
-include("Config.php");
+    include("Config.php");
 
 $sql = "SELECT * FROM usuarios WHERE id='$id' ";
 $result = $conn->query($sql); 
@@ -36,8 +37,8 @@ $result = $conn->query($sql);
 	if ($result->num_rows > 0) {
 	$row = $result->fetch_assoc();
 	}
+	
 }
-
 ?>
 <!doctype html>
 <html>
