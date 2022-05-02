@@ -28,7 +28,7 @@ echo "<script> location='Registrosadmi.php';</script>";
 if (isset ($_GET['var'])){
 	$id=$_GET['var'];
 	
-include("config.php");
+include("Config.php");
 
 $sql = "SELECT * FROM usuarios WHERE id='$id' ";
 $result = $conn->query($sql); 
