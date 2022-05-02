@@ -53,7 +53,7 @@
 		echo"<script> location='InicioProfesor.php';</script>";
 		}
   }else{
-    if ($row["nivel"]==2){
+    if ($row["nivel"]==1){
     echo"<script> location='InicioEstudiante.php';</script>";
     }
 	}  else {
