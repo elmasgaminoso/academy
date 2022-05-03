@@ -5,20 +5,20 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="css/materialize.min.css">
-	<link rel="stylesheet" href="css/1.css">
+<?php
+  include ('head.php');
+?>
 <title>Registro Usuarios por admin</title>
 </head>
     <body>
       <div class="container">
-        <div class="row center">
-           <h1>
-      <span class="text-wrapper">
-        <span class="letters">Registrar a Usuario</span>
-      </span>
-    </h1>
+        <div class="row center">	
+          <h4 class="fuente1 center">Bienvenido a la sesión de administrador, en esta página podrá administrar la base de datos, creando, editando y eliminando registros..</h4>
+          <h1>
+            <span class="text-wrapper">
+              <span class="letters">Registrar a Usuario</span>
+            </span>
+          </h1>
         </div>
           <div class="row">
         <form class="col s12" method="post" action="">

@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-    <link rel="stylesheet" type="text/css" href="css/1.css">
-		<!--<link rel="shortcut icon" type="image/png" href="img/apple-icon-180x180.png"/>-->
+    <?php
+      include ('head.php');
+    ?>
 
     <title>Iniciar sección Academy</title>
   </head>
@@ -34,32 +31,35 @@
 		 
       </div>
 </div>
-
-    <?php  
-    if (isset ($_POST['buscar'])){
+ <?php  
+if (isset ($_POST['buscar'])){
 	$usuario=$_POST['usuario'];
 	$clave=$_POST['clave'];
 
-	include('config.php');
+	include('Config.php');
 	  $sql="SELECT * FROM `usuarios` WHERE  usuario='$usuario' and clave='$clave' " ;
 	  $result = $conn->query($sql); 
 
 	  if ($result->num_rows > 0) {
 		$row = $result->fetch_assoc();
-		if ($row["nivel"]==2){
-		echo"<script> location='Indexadmi.php';</script>";
-	}else{
-		echo"<script> location='index.php';</script>";
-		}
-	}  else {
-	echo  "<div class='container center'>
- <h4>Datos incorrectos </h4><br><br>";
-
-     echo "<a href='' class='waves-effect waves-light btn-large shake-slow grey'> REINTENTAR  </a>
-	</div>";
-	}
-	
-}
+		  if ($row["nivel"]==3){
+		    echo"<script> location='RegistroUsuario.php';</script>";
+	      }else{
+          if ($row["nivel"]==2){
+		        echo"<script> location='InicioProfesor.php';</script>";
+          }else{
+            if ($row["nivel"]==1){
+               echo"<script> location='InicioEstudiante.php';</script>";
+	          }else{
+	              echo  "<div class='container center'>
+                <h4>Datos incorrectos </h4><br><br>";
+                echo "<a href='' class='waves-effect waves-light btn-large shake-slow grey'> REINTENTAR  </a>
+	              </div>";
+	          }	
+          }
+        }
+      }
+  }
 ?>
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
