@@ -1,6 +1,7 @@
 <?php
  session_start();
  include("Config")
+ include("validacion_sesion.php");
  $sql = "SELECT * FROM `usuarios` ";
 $result = $conn->query($sql); 
  ?>

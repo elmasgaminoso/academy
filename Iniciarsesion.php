@@ -44,21 +44,22 @@ if (isset ($_POST['buscar'])){
 		$row = $result->fetch_assoc();
 		  if ($row["nivel"]==3){
 		    echo"<script> location='RegistroUsuario.php';</script>";
-	      }else{
+	      }else
           if ($row["nivel"]==2){
 		        echo"<script> location='InicioProfesor.php';</script>";
-          }else{
+          }else
             if ($row["nivel"]==1){
                echo"<script> location='InicioEstudiante.php';</script>";
-	          }else{
-	              echo  "<div class='container center'>
-                <h4>Datos incorrectos </h4><br><br>";
-                echo "<a href='' class='waves-effect waves-light btn-large shake-slow grey'> REINTENTAR  </a>
-	              </div>";
-	          }	
-          }
-        }
-      }
+	          }
+      }else{
+        echo  "<div class='container center'>
+        <h4>Datos incorrectos </h4><br><br>";
+        echo "<a href='' class='waves-effect waves-light btn-large shake-slow grey'> REINTENTAR  </a>
+        </div>";
+    }
+    $_SESSION['user']=$row['usuario'];
+    $_SESSION['clave']=$row['clave'];
+    
   }
 ?>
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
