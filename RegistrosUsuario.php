@@ -1,6 +1,7 @@
 <?php
 session_start();
-	include("Config.php")
+include("Config.php");
+include("validacion_sesion.php");
 ?>
 <!doctype html>
 <html>

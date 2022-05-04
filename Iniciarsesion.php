@@ -57,7 +57,7 @@ if (isset ($_POST['buscar'])){
         echo "<a href='' class='waves-effect waves-light btn-large shake-slow grey'> REINTENTAR  </a>
         </div>";
     }
-    $_SESSION['user']=$row['usuario'];
+    $_SESSION['usuario']=$row['usuario'];
     $_SESSION['clave']=$row['clave'];
     
   }
