@@ -50,6 +50,7 @@ if (isset ($_POST['buscar'])){
           }else
             if ($row["nivel"]==1){
                echo"<script> location='InicioEstudiante.php';</script>";
+<<<<<<< HEAD:Iniciarsesión.php
 	          } else{
           echo  "<div class='container center'>
           <h4>Datos incorrectos </h4><br><br>";
@@ -58,6 +59,19 @@ if (isset ($_POST['buscar'])){
       }
   } 
 }
+=======
+	          }
+      }else{
+        echo  "<div class='container center'>
+        <h4>Datos incorrectos </h4><br><br>";
+        echo "<a href='' class='waves-effect waves-light btn-large shake-slow grey'> REINTENTAR  </a>
+        </div>";
+    }
+    $_SESSION['usuario']=$row['usuario'];
+    $_SESSION['clave']=$row['clave'];
+    
+  }
+>>>>>>> d42a11737ba0ff33bc291cf9a946f5ada145f270:Iniciarsesion.php
 ?>
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
