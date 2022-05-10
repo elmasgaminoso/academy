@@ -1,5 +1,7 @@
 <?php
  session_start();
+ include("Config.php");
+ include("validacion_sesion.php");
 if (isset ($_POST['modificar'])){
 	$id=$_POST['id'];
 	$usuario=$_POST['usuario'];
@@ -10,7 +12,6 @@ if (isset ($_POST['modificar'])){
 	$fechanac=$_POST['fechadenac'];
 	$nivel=$_POST['nivel'];
 
-    include("Config.php");
 $sql = "UPDATE usuarios SET usuario='$usuario',clave='$clave',correo='$correo',telefono='$telefono',nombre='$nombre',`fecha de nacimiento`='$fechanac',nivel='$nivel'  WHERE id='$id'";
 
 if ($conn->query($sql) === TRUE) {
@@ -20,16 +21,15 @@ if ($conn->query($sql) === TRUE) {
 }
 $sql = "SELECT * FROM usuarios WHERE id='$id'";
 $result = $conn->query($sql); 
+
 if ($result->num_rows > 0) {
 	$row = $result->fetch_assoc();
 }
-echo "<script> location='RegistrosUsuario.php';</script>";	
+echo "<script> location='Registrosadmi.php';</script>";	
 }
 
 if (isset ($_GET['var'])){
 	$id=$_GET['var'];
-	
-    include("Config.php");
 
 $sql = "SELECT * FROM usuarios WHERE id='$id' ";
 $result = $conn->query($sql); 
@@ -46,7 +46,7 @@ $result = $conn->query($sql);
     <?php
         include ('head.php');
     ?>
-<title>Documento sin título</title>
+<title>Editar info</title>
 </head>
 <body >
 	<div class="conatiner center">

@@ -1,6 +1,7 @@
 <?php
-	include("Config.php")
-
+session_start();
+include("Config.php");
+include("validacion_sesion.php");
 ?>
 <!doctype html>
 <html>
@@ -52,7 +53,7 @@ if ($result->num_rows > 0) {
 			<td>".$row["fecha de nacimiento"]."</td>
 			<td>".$row["genero"]."</td>
 			<td>".$row["nivel"]."</td>
-			<td> <a href='perfil.php?var=".$row["id"]."'><i class='material-icons'>create</i></a></td>
+			<td> <a href='editar.php?var=".$row["id"]."'><i class='material-icons'>create</i></a></td>
 			<td> <a href='eliminar.php?var=".$row["id"]."'><i class='material-icons'>delete</i></a></td>
         </tbody>";
       
