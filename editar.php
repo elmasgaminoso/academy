@@ -46,7 +46,7 @@ $result = $conn->query($sql);
     <?php
         include ('head.php');
     ?>
-<title>Editar info/title>
+<title>Editar info</title>
 </head>
 <body >
 	<div class="conatiner center">

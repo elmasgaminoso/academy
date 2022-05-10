@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -43,23 +46,19 @@ if (isset ($_POST['buscar'])){
 	  if ($result->num_rows > 0) {
 		$row = $result->fetch_assoc();
 		  if ($row["nivel"]==3){
+        $_SESSION['usuario']="usuario";
+        $_SESSION['clave']="clave";
 		    echo"<script> location='RegistroUsuario.php';</script>";
 	      }else
           if ($row["nivel"]==2){
+            $_SESSION['usuario']="usuario";
+            $_SESSION['clave']="clave";
 		        echo"<script> location='InicioProfesor.php';</script>";
           }else
             if ($row["nivel"]==1){
+              $_SESSION['usuario']="usuario";
+              $_SESSION['clave']="clave";
                echo"<script> location='InicioEstudiante.php';</script>";
-<<<<<<< HEAD:Iniciarsesión.php
-	          } else{
-          echo  "<div class='container center'>
-          <h4>Datos incorrectos </h4><br><br>";
-          echo "<a href='' class='waves-effect waves-light btn-large shake-slow grey'> REINTENTAR  </a>
-          </div>";
-      }
-  } 
-}
-=======
 	          }
       }else{
         echo  "<div class='container center'>
@@ -67,11 +66,7 @@ if (isset ($_POST['buscar'])){
         echo "<a href='' class='waves-effect waves-light btn-large shake-slow grey'> REINTENTAR  </a>
         </div>";
     }
-    $_SESSION['usuario']=$row['usuario'];
-    $_SESSION['clave']=$row['clave'];
-    
   }
->>>>>>> d42a11737ba0ff33bc291cf9a946f5ada145f270:Iniciarsesion.php
 ?>
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
