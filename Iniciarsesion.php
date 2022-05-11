@@ -46,18 +46,15 @@ if (isset ($_POST['buscar'])){
 	  if ($result->num_rows > 0) {
 		$row = $result->fetch_assoc();
 		  if ($row["nivel"]==3){
-        $_SESSION['usuario']="usuario";
-        $_SESSION['clave']="clave";
+        $_SESSION['usuario']=3;
 		    echo"<script> location='RegistroUsuario.php';</script>";
 	      }else
           if ($row["nivel"]==2){
-            $_SESSION['usuario']="usuario";
-            $_SESSION['clave']="clave";
+            $_SESSION['usuario']=2;
 		        echo"<script> location='InicioProfesor.php';</script>";
           }else
             if ($row["nivel"]==1){
-              $_SESSION['usuario']="usuario";
-              $_SESSION['clave']="clave";
+              $_SESSION['usuario']=1;
                echo"<script> location='InicioEstudiante.php';</script>";
 	          }
       }else{

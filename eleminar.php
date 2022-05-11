@@ -1,5 +1,6 @@
 <?php
 session_start();
+$pagina="admin";
 include("validacion_sesion.php");
 if (isset($_GET['var'])){
 $id=$_GET['var'];	

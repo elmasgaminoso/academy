@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $pagina="admin";
     include ('config.php');
     include("validacion_sesion.php");
 ?>
