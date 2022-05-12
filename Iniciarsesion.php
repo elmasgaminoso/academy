@@ -46,15 +46,15 @@ if (isset ($_POST['buscar'])){
 	  if ($result->num_rows > 0) {
 		$row = $result->fetch_assoc();
 		  if ($row["nivel"]==3){
-        $_SESSION['usuario']=3;
+        $_SESSION['usuario']="3";
 		    echo"<script> location='RegistroUsuario.php';</script>";
 	      }else
           if ($row["nivel"]==2){
-            $_SESSION['usuario']=2;
+            $_SESSION['usuario']="2";
 		        echo"<script> location='InicioProfesor.php';</script>";
           }else
             if ($row["nivel"]==1){
-              $_SESSION['usuario']=1;
+              $_SESSION['usuario']="1";
                echo"<script> location='InicioEstudiante.php';</script>";
 	          }
       }else{
@@ -64,6 +64,7 @@ if (isset ($_POST['buscar'])){
         </div>";
     }
   }
+ 
 ?>
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
