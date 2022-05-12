@@ -46,7 +46,7 @@ if (isset ($_POST['buscar'])){
 	  if ($result->num_rows > 0) {
 		$row = $result->fetch_assoc();
 		  if ($row["nivel"]==3){
-        $_SESSION['usuario']="3";
+        $_SESSION['usuario']="3"; 
 		    echo"<script> location='RegistroUsuario.php';</script>";
 	      }else
           if ($row["nivel"]==2){
