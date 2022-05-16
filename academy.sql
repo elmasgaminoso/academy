@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-05-2022 a las 22:27:30
+-- Tiempo de generación: 16-05-2022 a las 23:40:56
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.5
 
@@ -72,6 +72,7 @@ CREATE TABLE `usuarios` (
   `correo` varchar(30) COLLATE utf8_spanish2_ci NOT NULL,
   `telefono` int(30) NOT NULL,
   `nombre` varchar(30) COLLATE utf8_spanish2_ci NOT NULL,
+  `apellido` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
   `fecha de nacimiento` date NOT NULL,
   `genero` varchar(2) COLLATE utf8_spanish2_ci NOT NULL,
   `nivel` int(3) NOT NULL
@@ -81,10 +82,10 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `usuario`, `clave`, `correo`, `telefono`, `nombre`, `fecha de nacimiento`, `genero`, `nivel`) VALUES
-(1, 'admin', 1234, 'juandap00@hotmail.com', 12345, 'juan david', '2000-02-29', 'M', 5),
-(9, 'lina', 1234, 'linagir@hotmail.com', 12126, 'lina cecilia', '2020-02-13', 'F', 4),
-(2, 'hola', 1234, 'linagir@hotmail.com', 2454, 'hola', '2020-02-01', 'm', 4);
+INSERT INTO `usuarios` (`id`, `usuario`, `clave`, `correo`, `telefono`, `nombre`, `apellido`, `fecha de nacimiento`, `genero`, `nivel`) VALUES
+(1, 'admin', 1234, 'juandap00@hotmail.com', 12345, 'juan david', 'Peralta giraldo', '2000-02-29', 'M', 3),
+(9, 'lina', 1234, 'linagir@hotmail.com', 12126, 'lina', 'cecilia', '2020-02-13', 'F', 2),
+(2, 'hola', 1234, 'hola@gmail.com', 2454, 'Estudiante ', '1', '2020-02-01', 'm', 1);
 
 --
 -- Índices para tablas volcadas
