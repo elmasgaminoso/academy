@@ -1,7 +1,11 @@
 <?php 
 
-    require("config.php");
+$connect = new mysqli($db_host, $db_user, $db_password, $db_name);
 
+if ($connect->connect_error) {
+    die ('Falló al conectar con la base de datos' . $connect->connect_error);
+    exit();
+}
     //campos database
 
     $id = "";

@@ -35,6 +35,11 @@
               <input placeholder="Nombre"id="last_name" type="text" class="validate" name="nombre">
               <label for="last_name">Nombre:</label>
             </div>
+            <div class="input-field col s6">
+               <i class="material-icons prefix">account_circle</i>
+              <input placeholder="Apellidos"id="last_name" type="text" class="validate" name="apellido">
+              <label for="last_name">Apellido:</label>
+            </div>  
           </div>
           <div class="row">
             <div class="input-field col s6">
@@ -105,13 +110,14 @@
         $email=$_POST['email'];
         $telefono=$_POST['telefono'];
         $nombre=$_POST['nombre'];
+        $apellido=$_POST['apellido'];
         $fechanac=$_POST['fechanac'];
         $genero=$_POST['genero'];
         $nivel=$_POST['nivel'];
 
     
-        $sql = "INSERT INTO `usuarios`( `usuario`, `clave`, `correo`, `telefono`, `nombre`, `fecha de nacimiento`, `genero`, `nivel`) VALUES
-         ('$usuario', '$clave', '$email', '$telefono', '$nombre', '$fechanac','$genero', '$nivel')";
+        $sql = "INSERT INTO `usuarios`( `usuario`, `clave`, `correo`, `telefono`, `nombre`,`apellido`, `fecha de nacimiento`, `genero`, `nivel`) VALUES
+         ('$usuario', '$clave', '$email', '$telefono', '$nombre','$email', '$fechanac','$genero', '$nivel')";
     
         if ($conn->query($sql) === TRUE) {
             echo  "<div class='container center'>
