@@ -42,19 +42,22 @@ if (isset ($_POST['buscar'])){
 	include('Config.php');
 	  $sql="SELECT * FROM `usuarios` WHERE  usuario='$usuario' and clave='$clave' " ;
 	  $result = $conn->query($sql); 
-
 	  if ($result->num_rows > 0) {
 		$row = $result->fetch_assoc();
+    $id= $row['id'];
 		  if ($row["nivel"]==3){
         $_SESSION['usuario']="3"; 
+        $_SESSION['Id']=$id;
 		    echo"<script> location='RegistroUsuario.php';</script>";
 	      }else
           if ($row["nivel"]==2){
             $_SESSION['usuario']="2";
+            $_SESSION['Id']=$id;
 		        echo"<script> location='InicioProfesor.php';</script>";
           }else
             if ($row["nivel"]==1){
               $_SESSION['usuario']="1";
+              $_SESSION['Id']=$id;
                echo"<script> location='InicioEstudiante.php';</script>";
 	          }
       }else{
@@ -64,7 +67,6 @@ if (isset ($_POST['buscar'])){
         </div>";
     }
   }
- 
 ?>
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>

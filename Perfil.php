@@ -1,5 +1,13 @@
 <?php
  session_start();
+ $pagina="estudiante";
+ include ('config.php');
+ include("validacion_sesion.php");
+$sql = "SELECT * FROM usuarios WHERE id='$_SESSION[Id]' ";
+$result = $conn->query($sql); 
+if ($result->num_rows > 0) {
+	$row = $result->fetch_assoc();
+	}
 if (isset ($_POST['modificar'])){
 	$id=$_POST['id'];
 	$usuario=$_POST['usuario'];
@@ -10,35 +18,15 @@ if (isset ($_POST['modificar'])){
 	$fechanac=$_POST['fechadenac'];
 	$nivel=$_POST['nivel'];
 
-    include("Config.php");
 $sql = "UPDATE usuarios SET usuario='$usuario',clave='$clave',correo='$correo',telefono='$telefono',nombre='$nombre',`fecha de nacimiento`='$fechanac',nivel='$nivel'  WHERE id='$id'";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Record updated successfully";
+    echo "Datos actualizados";
 } else {
-    echo "Error updating record: " . $conn->error;
-}
-$sql = "SELECT * FROM usuarios WHERE id='$id'";
-$result = $conn->query($sql); 
-if ($result->num_rows > 0) {
-	$row = $result->fetch_assoc();
-}
-echo "<script> location='RegistrosUsuario.php';</script>";	
+    echo "Error en actualizar los datos" . $conn->error;
+}	
 }
 
-if (isset ($_GET['var'])){
-	$id=$_GET['var'];
-	
-    include("Config.php");
-
-$sql = "SELECT * FROM usuarios WHERE id='$id' ";
-$result = $conn->query($sql); 
-
-	if ($result->num_rows > 0) {
-	$row = $result->fetch_assoc();
-	}
-	
-}
 ?>
 <!doctype html>
 <html>
