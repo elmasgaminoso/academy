@@ -31,7 +31,8 @@ echo "<table>
               <th>CLAVE</th>
 			  <th>CORREO</th>
 			  <th>TELEFONO</th>
-			  <th>NOMBRE</th>
+			  <th>NOMBRES</th>
+			  <th>APELLIDOS</th>
 			  <th>FECHA DE NACIMIENTO</th>
 			  <th>GENERO</th>
 			  <th>NIVEL</th>
@@ -51,6 +52,7 @@ if ($result->num_rows > 0) {
 			<td>".$row["correo"]."</td>
 			<td>".$row["telefono"]."</td>
             <td>".$row["nombre"]."</td>
+			<td>".$row["apellido"]."</td>
 			<td>".$row["fecha de nacimiento"]."</td>
 			<td>".$row["genero"]."</td>
 			<td>".$row["nivel"]."</td>

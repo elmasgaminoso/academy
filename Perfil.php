@@ -1,44 +1,30 @@
 <?php
  session_start();
-if (isset ($_POST['modificar'])){
-	$id=$_POST['id'];
-	$usuario=$_POST['usuario'];
-	$clave=$_POST['clave'];
-	$correo=$_POST['correo'];
-	$telefono=$_POST['telefono'];
-	$nombre=$_POST['nombre'];
-	$fechanac=$_POST['fechadenac'];
-	$nivel=$_POST['nivel'];
-
-    include("Config.php");
-$sql = "UPDATE usuarios SET usuario='$usuario',clave='$clave',correo='$correo',telefono='$telefono',nombre='$nombre',`fecha de nacimiento`='$fechanac',nivel='$nivel'  WHERE id='$id'";
-
-if ($conn->query($sql) === TRUE) {
-    echo "Record updated successfully";
-} else {
-    echo "Error updating record: " . $conn->error;
-}
-$sql = "SELECT * FROM usuarios WHERE id='$id'";
+ $pagina="estudiante";
+ include ('config.php');
+ include("validacion_sesion.php");
+$sql = "SELECT * FROM usuarios WHERE id='$_SESSION[Id]' ";
 $result = $conn->query($sql); 
 if ($result->num_rows > 0) {
 	$row = $result->fetch_assoc();
-}
-echo "<script> location='RegistrosUsuario.php';</script>";	
-}
-
-if (isset ($_GET['var'])){
-	$id=$_GET['var'];
-	
-    include("Config.php");
-
-$sql = "SELECT * FROM usuarios WHERE id='$id' ";
-$result = $conn->query($sql); 
-
-	if ($result->num_rows > 0) {
-	$row = $result->fetch_assoc();
 	}
-	
-}
+if (isset ($_POST['modificar'])){
+  $nombre=$_POST['nombre'];
+  $apellido=$_POST['apellido'];
+	$clave=$_POST['clave'];
+	$correo=$_POST['correo'];
+	$telefono=$_POST['telefono'];
+	$fechanac=$_POST['fechadenac'];
+
+$sql = "UPDATE usuarios SET clave='$clave',correo='$correo',telefono='$telefono',nombre='$nombre',apellido='$apellido',`fecha de nacimiento`='$fechanac' WHERE id='$_SESSION[Id]'";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Datos actualizados";
+} else {
+    echo "Error en actualizar los datos" . $conn->error;
+}	
+} 
+
 ?>
 <!doctype html>
 <html>
@@ -51,31 +37,34 @@ $result = $conn->query($sql);
 <body >
 	<div class="conatiner center">
 	
-	<h1>Modifica el registro</h1>
+	<h1>Perfil</h1>
 	</div>
 	<div class="container center">
     <div class="row">
     <form class="col s12" method="post" action="">
       <div class="row">
-		  <div class="input-field col s5 offset-s3">
+		  <div class="col s5 offset-s3">
            <i class="material-icons prefix">account_circle</i>
-          <input placeholder="Id" id="first_name" type="text" class="validate" name="id" value="<?php echo $row["id"]?>">
-          <label for="first_name">Id:</label>
+           <p>Id: <?php echo $row["id"]?></p>
         </div>
-        <div class="input-field col s5 offset-s3">
-           <i class="material-icons prefix">account_circle</i>
-          <input placeholder="Usuario" id="first_name" type="text" class="validate" name="usuario" value="<?php echo $row["usuario"]?>">
-          <label for="first_name">Usuario:</label>
+        <div class=" col s5 offset-s3">
+          <i class="material-icons prefix">account_circle</i>
+           <p>Usuario: <?php echo $row["usuario"]?></p>
         </div>
         <div class="input-field col s5 offset-s3">
            <i class="material-icons prefix">account_circle</i>
           <input placeholder="Nombre"id="last_name" type="text" class="validate" name="nombre" value="<?php echo $row["nombre"]?>">
           <label for="last_name">Nombre:</label>
-        </div>    
+        </div>
+        <div class="input-field col s5 offset-s3">
+           <i class="material-icons prefix">account_circle</i>
+          <input placeholder="Apellido"id="last_name" type="text" class="validate" name="apellido" value="<?php echo $row["apellido"]?>">
+          <label for="last_name">Apellido:</label>
+        </div>   
         <div class="input-field col s5 offset-s3">
           <i class="material-icons prefix">email</i>
           <input id="email" type="email" class="validate" name="correo" value="<?php echo $row["correo"]?>">
-          <label for="email">Correo Elcetronico</label>
+          <label for="email">Correo Electronico</label>
         </div>
 		   <div class="input-field col s5 offset-s3">
            <i class="material-icons prefix">vpn_key</i>
@@ -93,12 +82,6 @@ $result = $conn->query($sql);
             <label >Fecha de nacimiento</label>
         </div>      
 		  </div>
-		 <div class="input-field col s5 offset-s3">
-           <i class="material-icons prefix">timeline</i>
-          <input placeholder="Nivel" id="tel" type="text" class="validate" name="nivel" value="<?php echo $row["nivel"]?>">
-          <label for="first_name">Nivel:</label>
-        </div>
-		 </div>
 		  <div class="row center">
         <a class="waves-effect waves-light btn-large shake-slow"><i class="material-icons left  ">send</i><input type="submit" value="modificar" name="modificar"></input></a> 
 		 

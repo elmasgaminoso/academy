@@ -10,10 +10,11 @@ if (isset ($_POST['modificar'])){
 	$correo=$_POST['correo'];
 	$telefono=$_POST['telefono'];
 	$nombre=$_POST['nombre'];
+  $apellido=$_POST['apellido'];
 	$fechanac=$_POST['fechadenac'];
 	$nivel=$_POST['nivel'];
 
-$sql = "UPDATE usuarios SET usuario='$usuario',clave='$clave',correo='$correo',telefono='$telefono',nombre='$nombre',`fecha de nacimiento`='$fechanac',nivel='$nivel'  WHERE id='$id'";
+$sql = "UPDATE usuarios SET usuario='$usuario',clave='$clave',correo='$correo',telefono='$telefono',nombre='$nombre',apellido='$apellido',`fecha de nacimiento`='$fechanac',nivel='$nivel'  WHERE id='$id'";
 
 if ($conn->query($sql) === TRUE) {
     echo "Record updated successfully";
@@ -72,7 +73,12 @@ $result = $conn->query($sql);
            <i class="material-icons prefix">account_circle</i>
           <input placeholder="Nombre"id="last_name" type="text" class="validate" name="nombre" value="<?php echo $row["nombre"]?>">
           <label for="last_name">Nombre:</label>
-        </div>    
+        </div>
+        <div class="input-field col s5 offset-s3">
+           <i class="material-icons prefix">account_circle</i>
+          <input placeholder="Apellido"id="last_name" type="text" class="validate" name="apellido" value="<?php echo $row["apellido"]?>">
+          <label for="last_name">Apellido:</label>
+        </div>   
         <div class="input-field col s5 offset-s3">
           <i class="material-icons prefix">email</i>
           <input id="email" type="email" class="validate" name="correo" value="<?php echo $row["correo"]?>">
