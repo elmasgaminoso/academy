@@ -20,7 +20,7 @@
 		  
         <div class="input-field col s5 offset-s3">
            <i class="material-icons prefix">account_circle</i>
-          <input placeholder="Codigo" id="first_name" type="text" class="validate black-text" name="usuario">
+          <input placeholder="Usuario" id="first_name" type="text" class="validate black-text" name="usuario">
           <label for="first_name" class="black-text">Usuario:</label>
         </div>
 		  <div class="input-field col s5 offset-s3">

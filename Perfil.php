@@ -16,14 +16,14 @@ if (isset ($_POST['modificar'])){
 	$telefono=$_POST['telefono'];
 	$fechanac=$_POST['fechadenac'];
 
-$sql = "UPDATE usuarios SET clave='$clave',correo='$correo',telefono='$telefono',nombre='$nombre',apellido='$apellido',`fecha de nacimiento`='$fechanac'  WHERE id='$id'";
+$sql = "UPDATE usuarios SET clave='$clave',correo='$correo',telefono='$telefono',nombre='$nombre',apellido='$apellido',`fecha de nacimiento`='$fechanac' WHERE id='$_SESSION[Id]'";
 
 if ($conn->query($sql) === TRUE) {
     echo "Datos actualizados";
 } else {
     echo "Error en actualizar los datos" . $conn->error;
 }	
-}
+} 
 
 ?>
 <!doctype html>
