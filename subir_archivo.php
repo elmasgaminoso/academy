@@ -1,11 +1,5 @@
 <?php 
-
-$connect = new mysqli($db_host, $db_user, $db_password, $db_name);
-
-if ($connect->connect_error) {
-    die ('Falló al conectar con la base de datos' . $connect->connect_error);
-    exit();
-}
+include ('Config.php');
     //campos database
 
     $id = "";
@@ -28,7 +22,7 @@ if ($connect->connect_error) {
 
     //ruta de la carpeta de destino
 
-    $host_file = '\archivos/Archivos /';
+    $host_file = 'C:\xampp\htdocs\Academy\archivos/';
     //mueve archivos del dirctorio temporal al escogido
 
     move_uploaded_file($_FILES ['archivos'] ['tmp_name'], $host_file . $name_file);
@@ -48,14 +42,10 @@ if ($connect->connect_error) {
 
     //Trabajo con database
 
+    $sql = "INSERT INTO archivos (nombre_archivo, tipo_archivo, tamano_archivo, direccion_archivo, archivo) VALUES ('$name_file', '$type_file', $size_file, '$host_file', '$file')";
+    $resut = $conn->query($sql);
 
-
-
-    $query = "INSERT INTO archivos (nombre_archivo, tipo_archivo, tamano_archivo, direccion_archivo, archivo) VALUES ('$name_file', '$type_file', $size_file, '$host_file', '$file')";
-
-    $resultado = $connect->query($query);
-
-    if (mysqli_affected_rows($connect)>0) {
+    if (mysqli_affected_rows($conn)>0) {
         echo 'se ha tenido éxito';
     }else {
         echo 'algo ha fallado';
