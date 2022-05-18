@@ -2,8 +2,7 @@
  session_start();
  include("validacion_sesion.php");
  include("Config.php");
- $sql = "SELECT * FROM `usuarios` ";
-$result = $conn->query($sql); 
+ $pagina="admin";
  ?>
 <!DOCTYPE html>
 <html>
@@ -14,6 +13,9 @@ $result = $conn->query($sql);
         <title>Plataforma Virtual Sysdatec</title>
     </head>
     <body>
+    <?php
+        include ('header.php');
+        ?>  
     <div class="container">
         <div class="row center">	
           <h1 class="fuente1 center">Bienvenido a la sesión de Administrador.</h1>

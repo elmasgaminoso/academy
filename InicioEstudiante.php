@@ -12,6 +12,9 @@
         <title>Plataforma Virtual Sysdatec</title>
     </head>
     <body>
+    <?php
+        include ('header.php');
+        ?>  
     <div class="container">
         <div class="row center">	
           <h1 class="fuente1 center">Bienvenido a la sesión de Estudiante.</h1>
