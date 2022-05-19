@@ -70,3 +70,19 @@
 .cerrar li{
     line-height: 0;
 }
+/** inicio de sesion*/
+.fondo_inicio{
+    background-image: url("../img/Iniciar-sesion.jpg");
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    height: 713px;
+}
+.sesion_contenedor{
+    border-radius: 20px;
+    padding: 30px;
+}
+.sesion_contenedor .row{
+    margin-bottom: 0;
+}
