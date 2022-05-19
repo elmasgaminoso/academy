@@ -2,3 +2,71 @@
     background-image: url("../img/Iniciar-sesion.jpg");
 
 }
+.header .row{
+    margin-bottom: 0px;
+    align-items: center;
+    display: flex;
+}
+.logo_sysdatec{
+    display: flex;
+}
+.sysdatec{
+    margin: auto 0;
+    padding: 0!important;
+}
+.sysdatec p{
+    margin: 0;
+    line-height: 22px;
+    color: #003395;
+    font-size: 20px;
+}
+.sysdatec .bold{
+    font-weight: bold;
+}
+.nombre_usuario{
+    display: flex;
+    align-content: center;
+    justify-content: end;
+    font-weight: 600;
+}
+.nombre_usuario li{
+    background: linear-gradient(to right, #42BFE6, #34BC83);
+    padding: 7px 20px;
+    border-radius: 5px;
+    line-height: 30px;
+}
+.nombre_usuario li a{
+    font-size: 18px;
+}
+.nombre_usuario li a:hover{
+    background-color: transparent;
+}
+.nav{
+    padding: 20px 0;
+    height: auto;
+    box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 0 0 20px 20px;
+}
+.imagen_sys{
+    display: flex;
+    padding: 0!important;
+}
+.menu_lateral{
+    box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 0 20px 20px 0px;
+    height: 100%;
+    width: 90px;
+    padding: 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+.menu_lateral li{
+    text-align: center;
+}
+.menu{
+    width: 100%;
+}
+.cerrar li{
+    line-height: 0;
+}
