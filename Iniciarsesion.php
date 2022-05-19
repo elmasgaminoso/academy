@@ -10,29 +10,30 @@
 
     <title>Iniciar sección Academy</title>
   </head>
-  <body>
-  <div class="container center">
+  <body class="fondo_inicio">
+  <div class="container center white z-depth-3 sesion_contenedor">
     <div class="row">
-	   <form class="col s12" method="post" action="">
+      <div class="col l6">
+	   <form  method="post" action="">
       <div class="row">
-		 <br>
-		  <br>
-		  
-        <div class="input-field col s5 offset-s3">
+        <h2>Iniciar sesión</h2>
+        <p>Digite su correo electrónico y contraseña para ingresar al Dashboard. </p>
+        <div class="input-field">
            <i class="material-icons prefix">account_circle</i>
           <input placeholder="Usuario" id="first_name" type="text" class="validate black-text" name="usuario">
           <label for="first_name" class="black-text">Usuario:</label>
         </div>
-		  <div class="input-field col s5 offset-s3">
+		  <div class="input-field ">
            <i class="material-icons prefix">vpn_key</i>
           <input placeholder=" Contraseña " id="first_name" type="password" class="validate black-text" name="clave">
           <label for="first_name" class="black-text">Contraseña:</label>
         </div>
-</div>
-		  <div class="row center">
-        <a class="waves-effect waves-light btn-large shake-slow grey"><i class="material-icons left  ">send</i><input type="submit" value="Enviar" name="buscar"></input></a> 
-		 
+		  <div class=" center">
+        <a class="waves-effect waves-light btn-large shake-slow grey"><i class="material-icons left  ">send</i><input type="submit" value="¡Iniciar sesión!" name="buscar"></input></a> 
       </div>
+      </div>
+    </div>
+  </div>
 </div>
  <?php  
 if (isset ($_POST['buscar'])){
