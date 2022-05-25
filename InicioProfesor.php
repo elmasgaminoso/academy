@@ -25,7 +25,6 @@ if ($result->num_rows > 0) {
     <div class="container">
         <div class="row center">	
           <h1 class="fuente1 center">Bienvenido a la sesión de Profesor.</h1>
-     <p><?php echo $row["nombre"]?></p>
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
         <script type="text/javascript">
