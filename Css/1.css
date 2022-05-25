@@ -1,3 +1,6 @@
+html{
+    height: 100%;
+}
 .logging{
     background-image: url("../img/Iniciar-sesion.jpg");
 
@@ -9,6 +12,15 @@
 }
 .logo_sysdatec{
     display: flex;
+}
+.logocaja{
+    background: linear-gradient(90deg, #42BFE6 0%, #34BC83 100%);
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius:  0 20px 20px 0;
+    padding: 50px!important;
 }
 .sysdatec{
     margin: auto 0;
@@ -77,12 +89,65 @@
     background-position: center center;
     display: flex;
     align-items: center;
-    height: 713px;
+    height: 100%;
 }
 .sesion_contenedor{
     border-radius: 20px;
-    padding: 30px;
 }
 .sesion_contenedor .row{
     margin-bottom: 0;
+}
+lottie-player{
+    margin: -50px 0 -50px 0;
+}
+.cajainicio{
+    display: flex;
+}
+.formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 8%!important;
+}
+.formulario h2{
+    margin: 0;
+    text-align: left;
+    color: #35BD98;
+    font-size: 50px;
+    font-weight: 600;
+}
+.formulario p{
+    font-size: 25px;
+    text-align: left;
+    line-height: 30px;
+    padding-bottom: 20px
+}
+.btninicio{
+    background-color: #35BD98;
+    border-radius: 10px;
+    text-transform: none;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.btninicio input{
+    color: white;
+    font-weight: 600;
+}
+.campos{
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0;
+    padding: 0!important;
+}
+.field{
+    background: #F6F6F6;
+    border-radius: 10px;
+    box-shadow: inset 0px 1px 4px rgb(0 0 0 / 25%);
+}
+.field input{
+    margin-bottom: 0!important;
+    border: 0!important;
+}
+.input-field .prefix.active {
+    color: #35bd98!important;
 }
