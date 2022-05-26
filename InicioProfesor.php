@@ -3,11 +3,6 @@ session_start();
 $pagina="profesor";
 include("Config.php");
 include("validacion_sesion.php");
-$sql = "SELECT * FROM `usuarios` WHERE  id='$_SESSION[Id]' ";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-}
  ?>
 <!DOCTYPE html>
 <html>
@@ -19,8 +14,13 @@ if ($result->num_rows > 0) {
     </head>
     <body>
     <?php
+    $sql = "SELECT * FROM `usuarios` WHERE  id='$_SESSION[Id]' ";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+    }
         include ('header.php');
-        include('menu_lateral.php')
+        include('menu_lateral.php');
         ?>  
     <div class="container">
         <div class="row center">	

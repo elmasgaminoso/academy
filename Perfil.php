@@ -35,12 +35,13 @@ if ($conn->query($sql) === TRUE) {
 <title>Documento sin título</title>
 </head>
 <body >
-	<div class="conatiner center">
-	
-	<h1>Perfil</h1>
-	</div>
-	<div class="container center">
+  <?php
+      include ('header.php');
+      include('menu_lateral.php');
+  ?> 
+	<div class="container ">
     <div class="row">
+    <h1>Perfil</h1>
     <form class="col s12" method="post" action="">
       <div class="row">
 		  <div class="col s5 offset-s3">

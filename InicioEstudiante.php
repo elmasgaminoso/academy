@@ -1,6 +1,7 @@
 <?php
  session_start();
  $pagina="estudiante";
+ include("Config.php");
  include("validacion_sesion.php");
  ?>
 <!DOCTYPE html>
@@ -13,7 +14,13 @@
     </head>
     <body>
     <?php
+    $sql = "SELECT * FROM `usuarios` WHERE  id='$_SESSION[Id]' ";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+    }
         include ('header.php');
+        include('menu_lateral.php');
         ?>  
     <div class="container">
         <div class="row center">	
