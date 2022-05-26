@@ -45,6 +45,7 @@ if ($conn->query($sql) === TRUE) {
 	</div>
 	<div class="container center">
     <div class="row">
+    <h1>Perfil</h1>
     <form class="col s12" method="post" action="">
       <div class="row">
 		  <div class="col s5 offset-s3">
