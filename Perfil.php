@@ -35,6 +35,10 @@ if ($conn->query($sql) === TRUE) {
 <title>Documento sin título</title>
 </head>
 <body >
+  <?php
+      include ('header.php');
+      include('menu_lateral.php');
+  ?>  
 	<div class="conatiner center">
 	
 	<h1>Perfil</h1>

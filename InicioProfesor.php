@@ -20,7 +20,7 @@ if ($result->num_rows > 0) {
     <body>
     <?php
         include ('header.php');
-        include('menu_lateral.php')
+        include('menu_lateral.php');
         ?>  
     <div class="container">
         <div class="row center">	
