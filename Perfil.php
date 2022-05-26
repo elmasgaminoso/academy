@@ -38,8 +38,12 @@ if ($conn->query($sql) === TRUE) {
   <?php
       include ('header.php');
       include('menu_lateral.php');
-  ?> 
-	<div class="container ">
+  ?>  
+	<div class="conatiner center">
+	
+	<h1>Perfil</h1>
+	</div>
+	<div class="container center">
     <div class="row">
     <h1>Perfil</h1>
     <form class="col s12" method="post" action="">
