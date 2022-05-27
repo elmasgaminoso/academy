@@ -255,3 +255,23 @@ lottie-player{
 .vistarapida .cajas{
     margin-top: 30px;
 }
+/* Mi centa */
+.cuenta_titulo{
+    font-size: 50px;
+    font-weight: 700;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.contenedor_perfil{
+    background: linear-gradient(180deg, #42BFEC 0%, #32BB75 100%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 40px!important;
+}
+.nombre_perfil{
+    font-size: 40px;
+    font-weight: 700;
+    color:white;
+    margin: 0;
+}
