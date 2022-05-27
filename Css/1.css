@@ -270,8 +270,20 @@ lottie-player{
     padding: 40px!important;
 }
 .nombre_perfil{
-    font-size: 40px;
+    font-size: 39px;
     font-weight: 700;
     color:white;
     margin: 0;
+}
+.contenedor_perfil .nombre{
+    padding: 0!important;
+}
+.form_perfil{
+    margin-top: 40px;
+}
+.form_perfil .campo_perfil{
+    margin-top: 20px;
+}
+.campo_perfil .field i{
+    text-align: center!important;
 }
