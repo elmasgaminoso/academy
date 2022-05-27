@@ -50,7 +50,7 @@ if ($conn->query($sql) === TRUE) {
         <div class="col l4">
 
         </div>
-        <div class="col l6 right nombre">
+        <div class="col l7 right nombre">
           <h2 class="nombre_perfil"> <?php echo $nombre_usuario ?></h2>
         </div>
         </div>

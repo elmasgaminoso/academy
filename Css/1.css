@@ -275,6 +275,9 @@ lottie-player{
     color:white;
     margin: 0;
 }
+.nombre{
+    width:63%!important;
+}
 .contenedor_perfil .nombre{
     padding: 0!important;
 }
@@ -286,4 +289,7 @@ lottie-player{
 }
 .campo_perfil .field i{
     text-align: center!important;
+}
+.form_perfil .btninicio{
+    margin-bottom: 60px;
 }
