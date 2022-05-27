@@ -207,17 +207,71 @@ lottie-player{
 }
 .bienvenido lottie-player{
     margin: 0;
-    margin-top: 10px;
+    margin-top: -15px;
     margin-left:-15px ;
 }
 .caja_bienvenido{
     display: flex;
 }
+.caja_bienvenido .l9{
+    height: 100%;
+}
 .banner{
     border-radius: 20px;
+    margin-left: 30px;
 }
 .animacion{
     display: flex;
     align-content: center;
     height: 100%;
+}
+.vistarapida h2{
+    font-size: 30px;
+    font-weight: 700;
+    text-align: left;
+    margin: 0;
+    
+}
+.vistarapida{
+    margin-top: 40px;
+}
+
+.caja_vista a{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 20px;
+    padding: 20px!important;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.caja_vista p{
+    color: black;
+    font-size: 25px;
+    font-weight: 500;
+    margin-left: 40px;
+}
+.vistarapida .cajas{
+    margin-top: 30px;
+}
+/* Mi centa */
+.cuenta_titulo{
+    font-size: 50px;
+    font-weight: 700;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.contenedor_perfil{
+    background: linear-gradient(180deg, #42BFEC 0%, #32BB75 100%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 40px!important;
+}
+.nombre_perfil{
+    font-size: 40px;
+    font-weight: 700;
+    color:white;
+    margin: 0;
 }
