@@ -3,6 +3,11 @@ session_start();
 $pagina="admin";
 include("Config.php");
 include("validacion_sesion.php");
+$sql = "SELECT * FROM `usuarios` WHERE  id='$_SESSION[Id]' ";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+	$row = $result->fetch_assoc();
+}
 ?>
 <!doctype html>
 <html>
@@ -14,14 +19,18 @@ include("validacion_sesion.php");
 </head>
 
 <body>	
-<div class="conatiner center">
-	<h1>Tabla Datos Usuarios</h1>
+	<?php
+       include ('header.php');
+	?>  
+<div class="container registro">
+ <a href="InicioAdmin.php"><i class="material-icons">keyboard_return</i></a>
+	<h1 class="fuente1 center">Tabla Datos Usuarios</h1>
 </div>
 <?php
 
-$sql = "SELECT * FROM `usuarios` ";
+$sql = "SELECT * FROM `usuarios` ";	
 $result = $conn->query($sql); 
-?> <div class="container">
+?> <div class="container form_admin">
 <?php
 echo "<table>
         <thead>
@@ -68,7 +77,7 @@ echo "</table>";
 
 	?> </div>
 
-<div class="conatiner center">
+<div class="conatiner center usuario3">
 	<h3> Los usuarios con nivel 3 tienen privilegio de administrador.</h3>
 	
 	</div>

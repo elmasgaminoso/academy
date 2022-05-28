@@ -1,6 +1,10 @@
 <?php
  session_start();
  $pagina="estudiante";
+ $inicio=true;
+ $notas=false;
+ $actividades=false;
+ $perfil=false;
  include("Config.php");
  include("validacion_sesion.php");
  $sql = "SELECT * FROM `usuarios` WHERE  id='$_SESSION[Id]' ";
@@ -21,6 +25,7 @@
     <?php
           include ('header.php');
           include('menu_lateral.php');
+          $inicio=true;
         ?>  
     <div class="container">
         <div class="row caja_bienvenido">	
