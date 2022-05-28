@@ -95,6 +95,13 @@ html{
     align-content: space-between;
     padding-left: 25px!important;
 }
+.activo path{
+    fill: #36bb84;
+}
+.activo p{
+    color: black!important;
+    font-weight: 700!important;
+}
 .menu_lateral2 li{
     display: flex;
     align-items: center;
@@ -103,6 +110,11 @@ html{
 .menu_lateral2 p{
     margin-left: 20px;
     font-weight: 600;
+    color: #A4A4A4;
+}
+.menu_lateral2 .cerrar p{
+    color:black;
+    font-weight: 700;
 }
 .menu_lateral li{
     text-align: center;

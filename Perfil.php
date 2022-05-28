@@ -1,6 +1,10 @@
 <?php
  session_start();
  $pagina="estudiante";
+ $inicio=false;
+ $notas=false;
+ $actividades=false;
+ $perfil=true;
  include ('config.php');
  include("validacion_sesion.php");
 $sql = "SELECT * FROM usuarios WHERE id='$_SESSION[Id]' ";
