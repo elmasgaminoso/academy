@@ -305,3 +305,46 @@ lottie-player{
 .form_perfil .btninicio{
     margin-bottom: 60px;
 }
+/*Admin*/
+.fuente1{
+    font-size: 50px;
+    font-weight: 700;
+    margin-top: 50px;
+}
+.cajas.admin{
+    margin-top: 50px;
+}
+.form_admin{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 30px;
+}
+.usuario3{
+    margin-top: 45px;
+    padding-bottom: 40px;
+}
+.usuario3 h3{
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+.registro{
+    padding-top: 30px;
+}
+.registro .fuente1{
+    margin-top: 0px;
+}
+.registro i{
+    font-size: 35px;
+    color: #ffffff;
+    background: linear-gradient(to right, #42BFE6, #34BC83);
+    border-radius: 10px;
+    padding: 6px;
+}
+.registros .fuente1{
+    margin-top: 0px;
+}
+.form_registro{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 40px!important;
+}

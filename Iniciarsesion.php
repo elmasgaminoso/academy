@@ -54,7 +54,7 @@ if (isset ($_POST['buscar'])){
 		  if ($row["nivel"]==3){
         $_SESSION['usuario']="3"; 
         $_SESSION['Id']=$id;
-		    echo"<script> location='RegistroUsuario.php';</script>";
+		    echo"<script> location='InicioAdmin.php';</script>";
 	      }else
           if ($row["nivel"]==2){
             $_SESSION['usuario']="2";
