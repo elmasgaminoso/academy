@@ -31,7 +31,7 @@ if ($result->num_rows > 0) {
           </h1>
         </div>
           <div class="row">
-        <form class="col s12 form_registro" method="post" action="">
+        <form class="col s12 form_registro" method="post" action="" enctype="multipart/form-data">
           <div class="row">
           <div class="col s5 caja">
            <p class="black-text campos">Usuario:</p>
@@ -88,20 +88,32 @@ if ($result->num_rows > 0) {
                 <input id="calendario" type="date"  name="fechanac">
               </div>
             </div>
-               <div class="input-field col s2 genero">
+               <div class="input-field col s1 genero">
            <label>
             <input type="checkbox" name="genero" value="M"/>
             <span>Masculino </span>
           </label>
             </div>
-               <div class="input-field col s2 genero">
+               <div class="input-field col s1 genero">
            
                <label>
             <input type="checkbox" name="genero" value="F" />
             <span>Femenino </span>
-          </label>           
+          </label>          
             </div>
+          <div class="col s3 foto">
+           <p class="black-text campos">Foto usuario:</p>
+            <div class="file-field input-field">
+              <div class="btn btnfoto">
+                <span>Foto</span>
+                  <input type="file" name="imagen" size="20">
               </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" placeholder="Sube la foto del usuario">
+              </div>
+            </div>
+            </div>
+          </div>
             <div class="row">
              <div class="col s5 caja">
               <p class="black-text campos">Nivel:</p>
@@ -128,7 +140,6 @@ if ($result->num_rows > 0) {
         </form>
       </div>
     </div>
-    
     <?php
         if (isset($_POST['enviar'])){  
         $usuario=$_POST['usuario'];
@@ -141,9 +152,10 @@ if ($result->num_rows > 0) {
         $genero=$_POST['genero'];
         $nivel=$_POST['nivel'];
 
+        include('Subir_imagen.php');
     
-        $sql = "INSERT INTO `usuarios`( `usuario`, `clave`, `correo`, `telefono`, `nombre`,`apellido`, `fecha de nacimiento`, `genero`, `nivel`) VALUES
-         ('$usuario', '$clave', '$email', '$telefono', '$nombre','$email', '$fechanac','$genero', '$nivel')";
+        $sql = "INSERT INTO `usuarios`( `direccionf`, `foto`, `usuario`, `clave`, `correo`, `telefono`, `nombre`,`apellido`, `fecha de nacimiento`, `genero`, `nivel`) VALUES
+         ( '$archivo_objetivo', '$nombre_archivo','$usuario', '$clave', '$email', '$telefono', '$nombre','$email', '$fechanac','$genero', '$nivel')";
     
         if ($conn->query($sql) === TRUE) {
             echo  "<div class='container center'>

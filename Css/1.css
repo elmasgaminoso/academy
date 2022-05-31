@@ -358,10 +358,15 @@ lottie-player{
 }
 .form_registro .genero{
     margin-top: 41px;
+    margin-right: 33px;
 }
 .form_registro .row{
     margin-left: 0;
     margin-right: 0;
+}
+.form_registro .btnfoto{
+    background-color: #35BD98;
+    border-radius: 10px;
 }
 .form_registro .registro1{
     margin-bottom: 0;
