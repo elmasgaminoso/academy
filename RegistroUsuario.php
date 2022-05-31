@@ -33,52 +33,68 @@ if ($result->num_rows > 0) {
           <div class="row">
         <form class="col s12 form_registro" method="post" action="">
           <div class="row">
-            <div class="input-field col s6 field">
+          <div class="col s5 caja">
+           <p class="black-text campos">Usuario:</p>
+            <div class="input-field field">
                <i class="material-icons prefix">account_circle</i>
               <input placeholder="Usuario" id="first_name" type="text" class="validate" name="usuario">
-              <label for="first_name">Usuario:</label>
             </div>
-            <div class="input-field col s6 field">
+          </div>
+            <div class="col s5 caja">
+              <p class="black-text campos">Nombre:</p>
+              <div class="input-field field">
                <i class="material-icons prefix">account_circle</i>
               <input placeholder="Nombre"id="last_name" type="text" class="validate" name="nombre">
-              <label for="last_name">Nombre:</label>
             </div>
-            <div class="input-field col s6 field">
+           </div>
+          </div>
+          <div class="row">
+           <div class="col s5 caja">
+            <p class="black-text campos">Apellidos:</p>
+            <div class="input-field field">
                <i class="material-icons prefix">account_circle</i>
               <input placeholder="Apellidos"id="last_name" type="text" class="validate" name="apellido">
-              <label for="last_name">Apellido:</label>
-            </div>  
+            </div>
+           </div>
+            <div class="col s5 caja">
+             <p class="black-text campos">Correo electroníco:</p>
+             <div class="input-field field">
+              <i class="material-icons prefix">email</i>
+              <input id="email" type="email" class="validate" name="email" placeholder="Correo electroníco">
+            </div>
+           </div>
           </div>
           <div class="row">
-            <div class="input-field col s6 field">
-              <i class="material-icons prefix">email</i>
-              <input id="email" type="email" class="validate" name="email">
-              <label for="email">Correo Elcetronico</label>
-            </div>
-               <div class="input-field col s6 field">
+            <div class="col s5 caja">
+             <p class="black-text campos">Contraseña:</p>
+               <div class="input-field field">
                <i class="material-icons prefix">vpn_key</i>
               <input placeholder="Contraseña" id="password" type="password"class="validate" name="clave">
-              <label for="first_name">Contraseña:</label>
+            </div>
+          </div>
+          <div class="col s5 caja">
+            <p class="black-text campos">Telefono:</p>
+            <div class="input-field field">
+              <i class="material-icons prefix">phone</i>
+              <input id="icon_telephone" type="number" class="validate" name="telefono" placeholder="Telefono">
+             </div>
             </div>
           </div>
           <div class="row">
-             <div class="input-field col s4 field">
-              <i class="material-icons prefix">phone</i>
-              <input id="icon_telephone" type="number" class="validate" name="telefono">
-              <label for="icon_telephone">Telefono</label>
-             </div>
-            <div class="input-field col s4 field">
+           <div class="col s5 caja">
+            <p class="black-text campos">Fecha de nacimiento:</p>
+            <div class="input-field field">
                <i class="material-icons prefix">perm_contact_calendar</i>
                 <input id="calendario" type="date"  name="fechanac">
-                <label >Fecha de nacimiento</label>
+              </div>
             </div>
-               <div class="input-field col s2">
+               <div class="input-field col s2 genero">
            <label>
             <input type="checkbox" name="genero" value="M"/>
             <span>Masculino </span>
           </label>
             </div>
-               <div class="input-field col s2">
+               <div class="input-field col s2 genero">
            
                <label>
             <input type="checkbox" name="genero" value="F" />
@@ -87,26 +103,26 @@ if ($result->num_rows > 0) {
             </div>
               </div>
             <div class="row">
-             <div class="input-field col s6 field">
+             <div class="col s5 caja">
+              <p class="black-text campos">Nivel:</p>
+             <div class="input-field field">
                <i class="material-icons prefix">timeline</i>
               <input placeholder="Nivel" id="tel" type="text" class="validate" name="nivel">
-              <label for="first_name">Nivel:</label>
+              </div>
              </div>
-            <div class="col s6">
-            <div class="col ">
-		        <h5>Nivel para admi = 3 </h5>
-		    </div>
-		    <div class="col ">
-			    <h5>Usuarios para Profesores = 2 </h5> 
-		    </div>
-            <div class="col ">
-			    <h5>Usuarios para Estudiantes = 1 </h5> 
-		    </div>
             </div>
+            <div class="row">
+            <div class="col s12 niveles">     
+		            <h5>Nivel para admi = 3 </h5>
+                <h5>Usuarios para Profesores = 2 </h5>
+                <h5>Usuarios para Estudiantes = 1 </h5> 
+		         </div>
             </div>
+            <div class="row registro1">
             <div class="left">
              <a class="waves-effect waves-light btn-large shake-slow btninicio"><input type="submit" value="Registrar usuario" name="enviar"></input></a> 
             </div>
+          </div>
           </div>
         </div>	
         </form>

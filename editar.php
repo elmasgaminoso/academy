@@ -51,13 +51,20 @@ $result = $conn->query($sql);
 <title>Editar info</title>
 </head>
 <body >
-	<div class="conatiner center">
-	
-	<h1>Modifica el registro</h1>
-	</div>
-	<div class="container center">
+  <?php
+        include ('header.php');
+	    ?> 
+  <div class="container registro"><a href="RegistrosUsuario.php"><i class="material-icons">keyboard_return</i></a></div>
+  <div class="container registros">
+        <div class="row center">
+          <h1 class="fuente1">
+            <span class="text-wrapper">
+              <span class="letters">Modificar registro</span>
+            </span>
+          </h1>
+        </div>
     <div class="row">
-    <form class="col s12" method="post" action="">
+    <form class="col s12 form_registro" method="post" action="">
       <div class="row">
 		  <div class="input-field col s5 offset-s3">
            <i class="material-icons prefix">account_circle</i>

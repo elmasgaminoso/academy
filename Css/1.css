@@ -347,4 +347,31 @@ lottie-player{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     padding: 40px!important;
+    margin-bottom: 70px;
+}
+.form_registro .caja{
+    margin-right: 25px;
+    width: 47.666667%!important;
+}
+.form_registro .caja i{
+    text-align: center;
+}
+.form_registro .genero{
+    margin-top: 41px;
+}
+.form_registro .row{
+    margin-left: 0;
+    margin-right: 0;
+}
+.form_registro .registro1{
+    margin-bottom: 0;
+}
+.niveles{
+    display: flex;
+    margin-top: -15px;
+    margin-bottom: -10px;
+
+}
+.niveles h5{
+    padding-right: 20px;
 }
