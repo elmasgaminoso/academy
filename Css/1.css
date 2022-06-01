@@ -104,6 +104,10 @@ html{
 .activo path{
     fill: #36bb84;
 }
+.activo.notas path{
+    fill: white;
+    stroke:#36bb84 ;
+}
 .activo p{
     color: black!important;
     font-weight: 700!important;
@@ -427,7 +431,16 @@ lottie-player{
 }
 .actividades{
     margin-left: 0!important;
+    display: flex;
+    justify-content: center;
 }
 .caja_actividad{
     margin-left: 0!important;
+}
+/*Mis materias*/
+.materias .__web-inspector-hide-shortcut__{
+    display: none;
+}
+.materias lottie-player{
+    margin-top: -70px;
 }

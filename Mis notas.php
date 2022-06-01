@@ -40,7 +40,7 @@ session_start();
          </div>
          <div class="col l6 animacion actividades">
             <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-            <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_j2rjqphu.json"  background="transparent"  speed="1"  style="width: 800px; height: 300px;"  loop autoplay></lottie-player>
+            <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_oojuetow.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
         </div>
         </div>
         <div class="row vistarapida">
