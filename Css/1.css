@@ -460,3 +460,9 @@ lottie-player{
     justify-content: left;
     padding-left: 50px!important; ;
 }
+.caja_vista.materia .iconos a{
+    justify-content: left;
+    box-shadow: none;
+    padding: 5px!important;
+    padding-left: 25px!important;
+}
