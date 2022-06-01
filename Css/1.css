@@ -444,3 +444,19 @@ lottie-player{
 .materias lottie-player{
     margin-top: -70px;
 }
+.materia ul, .materia li, .materia .collapsible-header{
+    border-radius: 20px;
+}
+.materia .collapsible-header{
+    padding-left: 50px;
+}
+.materia .collapsible-body{
+    border:0;
+}
+.collapsible-header{
+    align-items: center;
+}
+.caja_actividad1 a, .caja_nota a{
+    justify-content: left;
+    padding-left: 50px!important; ;
+}
