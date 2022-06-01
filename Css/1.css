@@ -47,6 +47,12 @@ html{
     padding: 7px 20px;
     border-radius: 5px;
     line-height: 30px;
+    display: flex;
+    align-items: center;
+}
+.nombre_usuario li img{
+    width: 50px;
+    border-radius: 50%;
 }
 .nombre_usuario li a{
     font-size: 18px;
@@ -279,7 +285,9 @@ lottie-player{
     background: linear-gradient(180deg, #42BFEC 0%, #32BB75 100%);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-    padding: 40px!important;
+    padding: 30px!important;
+    display: flex;
+    align-items: center;
 }
 .nombre_perfil{
     font-size: 30px;
@@ -292,6 +300,7 @@ lottie-player{
 }
 .contenedor_perfil .nombre{
     padding: 0!important;
+    margin-left: 40px!important;
 }
 .form_perfil{
     margin-top: 40px;
@@ -302,8 +311,40 @@ lottie-player{
 .campo_perfil .field i{
     text-align: center!important;
 }
+.foto_perfil{
+    margin-bottom: -18px;
+}
 .form_perfil .btninicio{
     margin-bottom: 60px;
+}
+.foto_perfil img{
+    width: 150px;
+    border-radius: 50%; 
+}
+.foto_perfil .btnfoto{
+    text-align: right;
+    margin-top: -40px;
+    margin-right: -16px;
+    color: white;
+}
+.tipo_perfil{
+    display: flex;
+    background: white;
+    align-items: center;
+    border-radius: 20px;
+    margin: 0;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    width: fit-content;
+    margin-top: 20px;
+}
+.tipo_perfil svg{
+    margin: 0 7px 0 20px;
+}
+.tipo_perfil h5{
+    margin: 0;
+    padding: 10px;
+    font-weight: 600;
+    margin-right: 15px;
 }
 /*Admin*/
 .fuente1{
@@ -379,4 +420,14 @@ lottie-player{
 }
 .niveles h5{
     padding-right: 20px;
+}
+/* Mis actividades*/
+.actividades lottie-player{
+    margin:0;
+}
+.actividades{
+    margin-left: 0!important;
+}
+.caja_actividad{
+    margin-left: 0!important;
 }

@@ -14,7 +14,10 @@ $nombre_usuario= $row["nombre"] ." ". $row["apellido"];
         </div>
       </div>
       <ul id="nav-mobile" class="right hide-on-med-and-down col l6 nombre_usuario">
-        <li><a href="Perfil.php">Hola, <?php echo $nombre_usuario ?></a></li>
+        <li>
+          <img src="Imagenes perfil/<?php echo $row["foto"]?>" class="responsive-img" width="auto">
+          <a href="Perfil.php">Hola, <?php echo $nombre_usuario ?></a>
+        </li>
       </ul>
     </div>
   </div>
