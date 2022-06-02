@@ -256,6 +256,7 @@ lottie-player{
 }
 .vistarapida{
     margin-top: 40px;
+    padding-bottom: 40px;
 }
 
 .caja_vista a{
@@ -395,7 +396,7 @@ lottie-player{
     margin-bottom: 70px;
 }
 .form_registro .caja{
-    margin-right: 25px;
+    margin-right: 22px;
     width: 47.666667%!important;
 }
 .form_registro .caja i{
@@ -465,4 +466,10 @@ lottie-player{
     box-shadow: none;
     padding: 5px!important;
     padding-left: 25px!important;
+}
+.materia .active .collapsible-header{
+    background: linear-gradient(to right, #42BFE6, #34BC83);
+}
+.materia .active .collapsible-header p{
+    color:white;
 }

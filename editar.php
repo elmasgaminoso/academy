@@ -29,7 +29,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
 	$row = $result->fetch_assoc();
 }
-echo "<script> location='Registrosadmi.php';</script>";	
+echo "<script> location='RegistrosUsuario.php';</script>";	
 }
 
 if (isset ($_GET['var'])){
