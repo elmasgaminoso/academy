@@ -227,7 +227,8 @@ session_start();
             document.addEventListener('DOMContentLoaded', function() {
              var elems = document.querySelectorAll('.collapsible');
              var instances = M.Collapsible.init(elems);
+             var instance = M.Tabs.getInstance(elem);
              });
-            </script>
+        </script>
     </body>
 </html>
