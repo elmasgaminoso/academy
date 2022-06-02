@@ -35,7 +35,8 @@ $result = $conn->query($sql);
 echo "<table>
         <thead>
           <tr>
-               <th>ID</th>
+              <th>ID</th>
+			  <th>FOTO</th>
               <th>USUARIO</th>
               <th>CLAVE</th>
 			  <th>CORREO</th>
@@ -55,7 +56,8 @@ if ($result->num_rows > 0) {
  
     echo    " <tbody>
           <tr>
-             <td>".$row["id"]."</td>
+            <td>".$row["id"]."</td>
+			<td><img src='Imagenes perfil/".$row["foto"]."' class='responsive-img' width='60'></td>
             <td>".$row["usuario"]."</td>
             <td>".$row["clave"]."</td>
 			<td>".$row["correo"]."</td>
