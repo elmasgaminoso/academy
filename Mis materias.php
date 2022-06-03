@@ -134,7 +134,7 @@ session_start();
                       </a>
                     </div>
                     <div class="iconos">
-                      <a>
+                      <a href="Inglesnotas.php">
                       <svg xmlns="http://www.w3.org/2000/svg" width="45" height="85" viewBox="0 0 80 85" fill="none"><path d="M19.28 60.7143L36 69.9429V80.9524H8C3.56 80.9524 0 77.35 0 72.8571V8.09524C0 5.94825 0.842854 3.88919 2.34315 2.37104C3.84344 0.852888 5.87827 0 8 0H12V28.3333L22 22.2619L32 28.3333V0H56C58.1217 0 60.1566 0.852888 61.6569 2.37104C63.1571 3.88919 64 5.94825 64 8.09524V42.6619L58 39.3429L19.28 60.7143ZM80 60.7143L58 48.5714L36 60.7143L58 72.8571L80 60.7143ZM44 69.1738V77.269L58 85L72 77.269V69.1738L58 76.9048L44 69.1738Z" fill="url(#paint0_linear_15_250)"></path><defs><linearGradient id="paint0_linear_15_250" x1="0" y1="42.5" x2="79.9988" y2="42.5" gradientUnits="userSpaceOnUse"><stop stop-color="#42BFE6"></stop><stop offset="1" stop-color="#34BC83"></stop></linearGradient></defs></svg>
                       <p>Mis Notas</p>
                       </a>

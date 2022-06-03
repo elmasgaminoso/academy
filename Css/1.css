@@ -575,3 +575,7 @@ lottie-player{
 .collapsible{
     background: white;
 }
+/*Notas ingles*/
+.ingles{
+    background-image: url("../img/Notas\ de\ ingles.jpg");
+}

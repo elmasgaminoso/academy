@@ -70,7 +70,7 @@ session_start();
             <div class="row cajas">
                 <div class="col l12 caja_vista materia">
                 <ul class="collapsible">
-                 <li>
+                 <li class="active">
                   <div class="collapsible-header">
                     <p>Clase 1 - Diagramas de Flujo</p>
                   </div>
@@ -82,7 +82,23 @@ session_start();
             </div>
           </div>
         </div>
-        <div id="2" class="col s12">Test 2</div>
+        <div id="2" class="col s12">
+        <div class="row vistarapida">
+            <div class="row cajas">
+                <div class="col l12 caja_vista materia">
+                <ul class="collapsible">
+                 <li class="active">
+                  <div class="collapsible-header">
+                    <p>Clase 1 - Diagramas de Flujo</p>
+                  </div>
+                  <div class="collapsible-body">
+                  </div>
+                  </li>
+                 </ul>
+                </div>
+            </div>
+          </div>
+        </div>
     </div>
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
