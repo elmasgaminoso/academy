@@ -160,15 +160,20 @@ $result = $conn->query($sql);
              <a class="waves-effect waves-light btn-large shake-slow btninicio"><input type="submit" value="Modificar datos" name="modificar"></input></a> 
             </div>
           </div>
+          <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
+  <ul id='dropdown1' class='dropdown-content'>
+    <li value="1"><a href="#!">one</a></li>
+    <li value="2"><a href="#!">two</a></li>
+  </ul>
           </form>
           </div>
-        </div>	
+        </div>
 	</div>
 </body>
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 	<script type="text/javascript">
-	
+	 M.AutoInit();
 $(".dropdown-trigger").dropdown();
 	$(document).ready(function(){
     $('.datepicker').datepicker();
