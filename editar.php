@@ -160,11 +160,6 @@ $result = $conn->query($sql);
              <a class="waves-effect waves-light btn-large shake-slow btninicio"><input type="submit" value="Modificar datos" name="modificar"></input></a> 
             </div>
           </div>
-          <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
-  <ul id='dropdown1' class='dropdown-content'>
-    <li value="1"><a href="#!">one</a></li>
-    <li value="2"><a href="#!">two</a></li>
-  </ul>
           </form>
           </div>
         </div>
