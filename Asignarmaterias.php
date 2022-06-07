@@ -28,39 +28,33 @@ $result = $conn->query($sql);
         <div class="row center">
           <h1 class="fuente1">
             <span class="text-wrapper">
-              <span class="letters">Registrar materia</span>
+              <span class="letters">Asignar materia</span>
             </span>
           </h1>
-        </div>
+        </div>  
           <div class="row">
         <form class="col s12 form_registro" method="post" action="" enctype="multipart/form-data">
           <div class="row">
-          <div class="col s5 caja">
-           <p class="black-text campos">Nombre de materia:</p>
-            <div class="input-field field">
-               <i class="material-icons prefix">account_circle</i>
-              <input placeholder="Escriba el nombre de la materia" id="first_name" type="text" class="validate" name="nombre">
-            </div>
+          <div class="col s6 caja">
+           <p class="black-text campos">Asignar estudiante:</p>
+           <div class="input-field col s12">
+               <select class="icons" name="estudiante">
+               <option value='' disabled selected >Escoja al estudiante</option>
+               <?php if ($result->num_rows > 0) {   
+                 while($row = $result->fetch_assoc()) {
+                 echo "
+                   <option value='".$row['id']."' data-icon='Imagenes perfil/".$row['foto']."'>".$row['nombre'] .' '. $row['apellido']."</option>";
+                }
+            }   
+                ?>
+                </select>
+             </div>
           </div>
-            <div class="col s5 caja">
-            <p class="black-text campos">Icono de la materia:</p>
-            <div class="file-field input-field">
-              <div class="btn btnfoto">
-                <span>Foto</span>
-                  <input type="file" name="imagen" size="20">
-              </div>
-              <div class="file-path-wrapper">
-                <input class="file-path validate" type="text" placeholder="Sube la foto de la materia">
-              </div>
-            </div>
-           </div>
-          </div>
-          <div class="row">
-           <div class="col s6 caja">
-            <p class="black-text campos">Profesor de la materia</p>
+          <div class="col s6 caja">
+            <p class="black-text campos">Materia</p>
             <div class="input-field col s12">
                <select class="icons" name="profesor">
-               <option value='' disabled selected >Escoja al profesor</option>
+               <option value='' disabled selected >Escoja la materia</option>
                <?php if ($result->num_rows > 0) {   
                  while($row = $result->fetch_assoc()) {
                  echo "
@@ -74,7 +68,7 @@ $result = $conn->query($sql);
           </div>
             <div class="row registro1">
             <div class="left">
-             <a class="waves-effect waves-light btn-large shake-slow btninicio"><input type="submit" value="Registrar materia" name="enviar"></input></a> 
+             <a class="waves-effect waves-light btn-large shake-slow btninicio"><input type="submit" value="Asignar materia" name="enviar"></input></a> 
             </div>
           </div>
           </div>
@@ -84,13 +78,13 @@ $result = $conn->query($sql);
     </div>
     <?php
         if (isset($_POST['enviar'])){  
-        $Nombre_materia=$_POST['nombre'];
-        $Id_profesor=$_POST['profesor'];
+        $Id_materia=$_POST['materia'];
+        $Id_estudiante=$_POST['estudiante'];
 
         include('Subir_imagen.php');
     
-        $sql = "INSERT INTO `materias`( `Nombre_materia`, `Imagen_materia`, `Id_profesor`) VALUES
-         ( '$Nombre_materia', '$nombre_archivo','$Id_profesor')";
+        $sql = "INSERT INTO `materias`( `Id_estudiante`, `Id_materia`) VALUES
+         ( '$Id_materia', '$Id_estudiante')";
     
         if ($conn->query($sql) === TRUE) {
             echo  "<div class='container center'>
