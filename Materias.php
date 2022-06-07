@@ -24,28 +24,23 @@ if ($result->num_rows > 0) {
 	?>  
 <div class="container registro">
  <a href="InicioAdmin.php"><i class="material-icons">keyboard_return</i></a>
-	<h1 class="fuente1 center">Tabla Datos Usuarios</h1>
+	<h1 class="fuente1 center">Tabla de Materias</h1>
 </div>
 <?php
 
-$sql = "SELECT * FROM `usuarios` ";	
+$sql = "SELECT * FROM `usuarios` ";
+$sql = "SELECT * FROM `materias` ";	
 $result = $conn->query($sql); 
 ?> <div class="container form_admin">
 <?php
 echo "<table>
         <thead>
           <tr>
-              <th>ID</th>
-			  <th>FOTO</th>
-              <th>USUARIO</th>
-              <th>CLAVE</th>
-			  <th>CORREO</th>
-			  <th>TELEFONO</th>
-			  <th>NOMBRES</th>
-			  <th>APELLIDOS</th>
-			  <th>FECHA DE NACIMIENTO</th>
-			  <th>GENERO</th>
-			  <th>NIVEL</th>
+              <th>ICONO MATERIA</th>
+              <th>ID MATERIA</th>
+			  <th>FOTO PROFESOR</th>
+              <th>ID DE PROFESOR</th>
+              <th>NOMBRE DEL PROFESOR ASIGNADO</th>
           </tr>
         </thead>";
 
@@ -56,21 +51,15 @@ if ($result->num_rows > 0) {
  
     echo    " <tbody>
           <tr>
-            <td>".$row["id"]."</td>
-			<td><img src='Imagenes perfil/".$row["foto"]."' class='responsive-img' width='60'></td>
-            <td>".$row["usuario"]."</td>
-            <td>".$row["clave"]."</td>
-			<td>".$row["correo"]."</td>
-			<td>".$row["telefono"]."</td>
+            <td><img src='Imagenes perfil/".$row["Imagen_materia"]."' class='responsive-img' width='60'></td>
+            <td>".$row["Id_materia"]."</td>
+            <td><img src='Imagenes perfil/".$row["foto"]."' class='responsive-img' width='60'></td>
+            <td>".$row["Id_profesor"]."</td>
             <td>".$row["nombre"]."</td>
 			<td>".$row["apellido"]."</td>
-			<td>".$row["fecha de nacimiento"]."</td>
-			<td>".$row["genero"]."</td>
-			<td>".$row["nivel"]."</td>
 			<td> <a href='editar.php?var=".$row["id"]."'><i class='material-icons'>create</i></a></td>
 			<td> <a href='eliminar.php?var=".$row["id"]."'><i class='material-icons'>delete</i></a></td>
-        </tbody>";
-      
+        </tbody>";    
 
 	}
 
@@ -78,13 +67,7 @@ if ($result->num_rows > 0) {
 echo "</table>"; 
 
 	?> </div>
-
-<div class="conatiner center usuario3">
-	<h3> Los usuarios con nivel 3 tienen privilegio de administrador.</h3>
-	
-	</div>
-
-        
+       
 </body>          
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>

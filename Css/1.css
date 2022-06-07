@@ -444,6 +444,7 @@ lottie-player{
 }
 .materias lottie-player{
     margin-top: -70px;
+    z-index: -1;
 }
 .materia ul, .materia li, .materia .collapsible-header{
     border-radius: 20px;
@@ -472,4 +473,109 @@ lottie-player{
 }
 .materia .active .collapsible-header p{
     color:white;
+}
+/*Logica de programacion*/
+.logica{
+    background-image: url("../img/Logica\ de\ Programación.jpg");
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+}
+.materia_caja{
+    margin: 0!important;
+}
+.materia_titulo{
+    display: flex;
+    flex-wrap: wrap;
+}
+.materia_titulo p{
+    padding-left: 25px;
+    font-size: 30px;
+    margin-top: 0;
+    font-weight: 700;
+}
+.materia_contenedor{
+    margin-top: 30px;
+}
+.profesor{
+    justify-content: flex-end;
+}
+.profesor .contenedor_perfil{
+    background: white;
+    padding:25px!important;
+}
+.profesor .nombre_perfil{
+    color: black;
+}
+.profesor .foto_perfil{
+    margin-bottom: 0;
+}
+.profesor .nombre_profesor h2{
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 10px;
+}
+.profesor .nombre_profesor{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 7px;
+}
+.nombre_profesor .material-icons{
+    font-size: 30px;
+    color: #35BD98;
+}
+.profesor .curso{
+    margin-bottom: 15px;
+    font-size: 25px;
+}
+.profesor .nombre{
+    margin-left: 15px!important;
+}
+.tab_materia{
+    text-align: center;
+    background: transparent;
+}
+.tab_materia .indicator{
+    display: none;
+}
+.tab_materia .tab a:hover, .tab_materia .tab a.active{
+    color: white!important;
+    background: linear-gradient(to right, #42BFE6, #34BC83)!important;
+    border-radius: 10px!important;
+}
+.tab_materia .tab a{
+    color: black!important;
+    background: white!important;
+    border-radius: 10px!important;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 20px;
+}
+.tab_materia .tab{
+    margin-right: 10px;
+}
+.logica .caja_bienvenido{
+    margin-bottom: 60px;
+}
+.logica .vistarapida{
+    margin-top: 0;
+}
+.logica .caja_vista p{
+    margin-left: 0;
+    line-height: 2px;
+    font-weight: 700;
+}
+.logica .collapsible{
+    border: none;
+}
+.logica .collapsible-header{
+    border: none;
+}
+.collapsible{
+    background: white;
+}
+/*Notas ingles*/
+.ingles{
+    background-image: url("../img/Notas\ de\ ingles.jpg");
 }

@@ -162,13 +162,13 @@ $result = $conn->query($sql);
           </div>
           </form>
           </div>
-        </div>	
+        </div>
 	</div>
 </body>
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 	<script type="text/javascript">
-	
+	 M.AutoInit();
 $(".dropdown-trigger").dropdown();
 	$(document).ready(function(){
     $('.datepicker').datepicker();
