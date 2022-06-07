@@ -15,7 +15,7 @@ if ($result->num_rows > 0) {
     <?php
         include ('head.php');
     ?>
-<title>Documento sin título</title>
+<title>Materias</title>
 </head>
 
 <body>	
@@ -29,7 +29,7 @@ if ($result->num_rows > 0) {
 <?php
 
 $sql = "SELECT * FROM `usuarios` ";
-$sql = "SELECT * FROM `materias` ";	
+
 $result = $conn->query($sql); 
 ?> <div class="container form_admin">
 <?php
