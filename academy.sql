@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-06-2022 a las 00:58:21
+-- Tiempo de generación: 09-06-2022 a las 01:36:32
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.5
 
@@ -56,7 +56,8 @@ CREATE TABLE `materias` (
 --
 
 INSERT INTO `materias` (`Id_materia`, `Nombre_materia`, `Imagen_materia`, `Id_profesor`, `Direccion_notas`, `Direccion_actividades`) VALUES
-(1, 'ingles', '271838052_484882319662544_750790001879805343_n.jpg', 9, '', '');
+(1, 'ingles', '271838052_484882319662544_750790001879805343_n.jpg', 9, '', ''),
+(2, 'Logica ', 'fmXcZW0j_4x.jpg', 9, 'fdewfe.php', 'fhuef.php');
 
 -- --------------------------------------------------------
 
@@ -151,7 +152,7 @@ ALTER TABLE `archivos`
 -- AUTO_INCREMENT de la tabla `materias`
 --
 ALTER TABLE `materias`
-  MODIFY `Id_materia` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Id_materia` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `materias_asignadas`
