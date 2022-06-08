@@ -61,12 +61,11 @@ $result = $conn->query($sql);
             <div class="input-field col s12">
                <select class="icons" name="profesor">
                <option value='' disabled selected >Escoja al profesor</option>
-               <?php if ($result->num_rows > 0) {   
+               <?php   
                  while($row = $result->fetch_assoc()) {
                  echo "
                    <option value='".$row['id']."' data-icon='Imagenes perfil/".$row['foto']."'>".$row['nombre'] .' '. $row['apellido']."</option>";
-                }
-            }   
+                }   
                 ?>
                 </select>
              </div>
