@@ -47,11 +47,27 @@ $result = $conn->query($sql);
             <div class="file-field input-field">
               <div class="btn btnfoto">
                 <span>Foto</span>
-                  <input type="file" name="imagen" size="20">
+                  <input type="file" name="imagen" size="20" required>
               </div>
               <div class="file-path-wrapper">
                 <input class="file-path validate" type="text" placeholder="Sube la foto de la materia">
               </div>
+            </div>
+           </div>
+          </div>
+          <div class="row">
+          <div class="col s5 caja">
+           <p class="black-text campos">Dirección actividades:</p>
+            <div class="input-field field">
+               <i class="material-icons prefix">account_circle</i>
+              <input placeholder="Escriba la dirección de Actividades" id="first_name" type="text" class="validate" name="actividades">
+            </div>
+          </div>
+            <div class="col s5 caja">
+            <p class="black-text campos">Dirección notas:</p>
+            <div class="input-field field">
+               <i class="material-icons prefix">account_circle</i>
+              <input placeholder="Escriba la deirección de Notas" id="first_name" type="text" class="validate" name="notas">
             </div>
            </div>
           </div>
@@ -61,12 +77,11 @@ $result = $conn->query($sql);
             <div class="input-field col s12">
                <select class="icons" name="profesor">
                <option value='' disabled selected >Escoja al profesor</option>
-               <?php if ($result->num_rows > 0) {   
+               <?php   
                  while($row = $result->fetch_assoc()) {
                  echo "
                    <option value='".$row['id']."' data-icon='Imagenes perfil/".$row['foto']."'>".$row['nombre'] .' '. $row['apellido']."</option>";
-                }
-            }   
+                }   
                 ?>
                 </select>
              </div>
@@ -86,15 +101,17 @@ $result = $conn->query($sql);
         if (isset($_POST['enviar'])){  
         $Nombre_materia=$_POST['nombre'];
         $Id_profesor=$_POST['profesor'];
+        $Notas=$_POST['notas'];
+        $Actividades=$_POST['actividades'];
 
         include('Subir_imagen.php');
     
-        $sql = "INSERT INTO `materias`( `Nombre_materia`, `Imagen_materia`, `Id_profesor`) VALUES
-         ( '$Nombre_materia', '$nombre_archivo','$Id_profesor')";
+        $sql = "INSERT INTO `materias`( `Nombre_materia`, `Imagen_materia`, `Id_profesor`, `Direccion_notas`, `Direccion_actividades`) VALUES
+         ( '$Nombre_materia', '$nombre_archivo','$Id_profesor','$Notas', '$Actividades')";
     
         if ($conn->query($sql) === TRUE) {
             echo  "<div class='container center'>
-     <h4>Nuevo Usuario registrado </h4>
+     <h4>Nueva Materia registrada </h4>
     </div>";
         } else {
             echo  "<div class='container center'>

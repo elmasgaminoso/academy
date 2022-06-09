@@ -1,17 +1,18 @@
 <?php
 session_start();
- $pagina="estudiante";
- $inicio=false;
- $notas=false;
- $actividades=false;
- $perfil=false;
+ $pagina="profesor";
  include("Config.php");
  include("validacion_sesion.php");
+ $_SESSION['direccion']="logicadeprogramacionprodesor.php";
  $sql = "SELECT * FROM `usuarios` WHERE  id='$_SESSION[Id]' ";
  $result = $conn->query($sql);
  if ($result->num_rows > 0) {
      $row = $result->fetch_assoc();
  }
+ if (isset ($_GET['var'])){
+    $id_materia=$_GET['var'];
+}
+
  ?>
 <!DOCTYPE html>
 <html>
@@ -21,12 +22,13 @@ session_start();
         ?>
         <title>Plataforma Virtual Sysdatec</title>
     </head>
-    <body class="logica">
+    <body class="logica profe">
     <?php
           include ('header.php');
-          include('menu_lateral.php');
-          $inicio=true;
-        ?>  
+        ?>
+ <div class="container registro">
+    <a href="materiasasignadasprofesor.php"><i class="material-icons">keyboard_return</i></a>
+  </div>
     <div class="container materia_contenedor">
         <div class="row caja_bienvenido">	
          <div class=" col l6 caja_actividad">
@@ -87,11 +89,12 @@ session_start();
                $sql = "SELECT * FROM `clases` WHERE  Id_materia='$_SESSION[Id_materia]' ";
                $result = $conn->query($sql);
                 while($row = $result->fetch_assoc()){
-                echo "<div class='col l12 caja_vista materia'>
+                echo "<div class='col l12 caja_vista materia profemateria'>
                 <ul class='collapsible'>
                  <li>
                   <div class='collapsible-header'>
                     <p>".$row['Nombre_clase']."</p>
+                    <a href='eliminarclase.php?var=".$row["Id"]."'><i class='material-icons'>delete</i></a>
                   </div>
                   <div class='collapsible-body'>
                     <p>".$row['Info_clase']."</p>
@@ -128,6 +131,9 @@ session_start();
             </div>
           </div>
         </div>
+        <div class="col s12 btnprofe">
+          <a class="waves-effect waves-light btn-large shake-slow  btninicio" href="crearclase.php">Crear clase</a> 
+        </div> 
     </div>
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>

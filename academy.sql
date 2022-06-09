@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-05-2022 a las 23:40:56
+-- Tiempo de generación: 09-06-2022 a las 01:36:32
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.5
 
@@ -24,40 +24,60 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `creadores`
+-- Estructura de tabla para la tabla `archivos`
 --
 
-CREATE TABLE `creadores` (
-  `id` int(2) NOT NULL,
-  `imagen` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
-  `texto1` varchar(1000) COLLATE utf8_spanish2_ci NOT NULL,
-  `texto2` varchar(1000) COLLATE utf8_spanish2_ci NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+CREATE TABLE `archivos` (
+  `id` int(11) NOT NULL,
+  `nombre_archivo` varchar(70) NOT NULL,
+  `tipo_archivo` varchar(100) NOT NULL,
+  `tamano_archivo` int(11) NOT NULL,
+  `direccion_archivo` varchar(100) NOT NULL,
+  `archivo` blob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
 
 --
--- Volcado de datos para la tabla `creadores`
+-- Estructura de tabla para la tabla `materias`
 --
 
-INSERT INTO `creadores` (`id`, `imagen`, `texto1`, `texto2`) VALUES
-(2, 'j.jpg', 'Es nuestro programador web principal, Trabajo en escribir el cÃ³digo de php, html y realizo todo el css. tambiÃ©n coordinÃ³ la distribuciÃ³n de imÃ¡genes ,texto y juego en la pÃ¡gina web.', ' It is our main web programmer, I work in writing the php, html code and I do all the css. He also coordinated the distribution of images, text and game on the website.'),
-(3, 'm.jpg', 'Nuestra ilustradora, DiseÃ±Ã³ a mano todos los banners, imÃ¡genes, diseÃ±o de pÃ¡gina y tÃ­tulos, haciendo mÃ¡s llamativa la pÃ¡gina', ' Our illustrator, designed by hand all the banners, images, page design and titles, making the page more striking'),
-(4, 'd.jpg', 'Nuestro segundo programador, Fue el encargado de hacer el juego, hacerlo funcional y hacer parte del cÃ³digo en la pÃ¡gina.', ' Our second programmer, was in charge of making the game, make it functional and be part of the code on the page.'),
-(5, 'k.jpg', 'DiseÃ±o los personajes y tiles del juego, tambiÃ©n se encargÃ³ de la redacciÃ³n de la pÃ¡gina.', ' Design the characters and tiles of the game, also took care of the writing of the page.'),
-(6, '1.jpg', '', ''),
-(7, '1.png', '', ''),
-(8, '2.jpg', '', ''),
-(9, '2.png', '', ''),
-(10, '3.jpg', '', ''),
-(11, '4.jpg', '', ''),
-(12, '5.jpg', '', ''),
-(13, '6.jpg', '', ''),
-(14, '7.jpg', '', ''),
-(15, '9.jpg', '', ''),
-(16, '10.jpg', '', ''),
-(17, 'g.JPG', '', ''),
-(18, 'h.jpeg', '', ''),
-(19, 'img.jpg', '', ''),
-(20, 'j.PNG', '', '');
+CREATE TABLE `materias` (
+  `Id_materia` int(100) NOT NULL,
+  `Nombre_materia` varchar(30) NOT NULL,
+  `Imagen_materia` varchar(100) NOT NULL,
+  `Id_profesor` int(11) NOT NULL,
+  `Direccion_notas` varchar(100) NOT NULL,
+  `Direccion_actividades` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `materias`
+--
+
+INSERT INTO `materias` (`Id_materia`, `Nombre_materia`, `Imagen_materia`, `Id_profesor`, `Direccion_notas`, `Direccion_actividades`) VALUES
+(1, 'ingles', '271838052_484882319662544_750790001879805343_n.jpg', 9, '', ''),
+(2, 'Logica ', 'fmXcZW0j_4x.jpg', 9, 'fdewfe.php', 'fhuef.php');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `materias_asignadas`
+--
+
+CREATE TABLE `materias_asignadas` (
+  `Id` int(11) NOT NULL,
+  `Id_Estudiante` int(30) NOT NULL,
+  `Id_materia` int(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `materias_asignadas`
+--
+
+INSERT INTO `materias_asignadas` (`Id`, `Id_Estudiante`, `Id_materia`) VALUES
+(7, 2, 1),
+(8, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -67,6 +87,8 @@ INSERT INTO `creadores` (`id`, `imagen`, `texto1`, `texto2`) VALUES
 
 CREATE TABLE `usuarios` (
   `id` int(5) NOT NULL,
+  `direccionf` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `foto` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
   `usuario` varchar(10) COLLATE utf8_spanish2_ci NOT NULL,
   `clave` int(10) NOT NULL,
   `correo` varchar(30) COLLATE utf8_spanish2_ci NOT NULL,
@@ -82,20 +104,33 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `usuario`, `clave`, `correo`, `telefono`, `nombre`, `apellido`, `fecha de nacimiento`, `genero`, `nivel`) VALUES
-(1, 'admin', 1234, 'juandap00@hotmail.com', 12345, 'juan david', 'Peralta giraldo', '2000-02-29', 'M', 3),
-(9, 'lina', 1234, 'linagir@hotmail.com', 12126, 'lina', 'cecilia', '2020-02-13', 'F', 2),
-(2, 'hola', 1234, 'hola@gmail.com', 2454, 'Estudiante ', '1', '2020-02-01', 'm', 1);
+INSERT INTO `usuarios` (`id`, `direccionf`, `foto`, `usuario`, `clave`, `correo`, `telefono`, `nombre`, `apellido`, `fecha de nacimiento`, `genero`, `nivel`) VALUES
+(1, '', 'Foto juan1.jpg', 'admin', 1234, 'juandap00@hotmail.com', 12345, 'juan david', 'Peralta giraldo', '2000-02-29', 'M', 3),
+(9, '', 'Profesora.jpg', 'lina', 1234, 'linagir@hotmail.com', 12126, 'lina', 'cecilia', '2020-02-13', 'F', 2),
+(2, '', 'Estudiante foto.jpg', 'Estudiante', 1234, 'estudiante@gmail.com', 2454, 'Estudiante ', '1', '2020-02-01', 'm', 1),
+(45, 'Resource id #11', '221088296_956513668522450_8912262950145641174_n.jpg', 'bital001', 1234, 'juandap00@hotmail.com', 74586863, 'jesus', 'juandap00@hotmail.com', '2022-06-14', 'M', 2);
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `creadores`
+-- Indices de la tabla `archivos`
 --
-ALTER TABLE `creadores`
+ALTER TABLE `archivos`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `materias`
+--
+ALTER TABLE `materias`
+  ADD PRIMARY KEY (`Id_materia`);
+
+--
+-- Indices de la tabla `materias_asignadas`
+--
+ALTER TABLE `materias_asignadas`
+  ADD PRIMARY KEY (`Id`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -108,16 +143,28 @@ ALTER TABLE `usuarios`
 --
 
 --
--- AUTO_INCREMENT de la tabla `creadores`
+-- AUTO_INCREMENT de la tabla `archivos`
 --
-ALTER TABLE `creadores`
-  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+ALTER TABLE `archivos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `materias`
+--
+ALTER TABLE `materias`
+  MODIFY `Id_materia` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `materias_asignadas`
+--
+ALTER TABLE `materias_asignadas`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

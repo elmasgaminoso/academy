@@ -8,7 +8,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
 	$row = $result->fetch_assoc();
 }
-$sql= "SELECT `id`,`foto`,`nombre`,`apellido` FROM `usuarios` WHERE `nivel`= 2";
+$sql= "SELECT `id`,`foto`,`nombre`,`apellido` FROM `usuarios` WHERE `nivel`= 1";
 $result = $conn->query($sql);
 ?>
 <!doctype html>
@@ -40,12 +40,12 @@ $result = $conn->query($sql);
            <div class="input-field col s12">
                <select class="icons" name="estudiante">
                <option value='' disabled selected >Escoja al estudiante</option>
-               <?php if ($result->num_rows > 0) {   
+               <?php    
                  while($row = $result->fetch_assoc()) {
                  echo "
                    <option value='".$row['id']."' data-icon='Imagenes perfil/".$row['foto']."'>".$row['nombre'] .' '. $row['apellido']."</option>";
                 }
-            }   
+              
                 ?>
                 </select>
              </div>
@@ -53,14 +53,16 @@ $result = $conn->query($sql);
           <div class="col s6 caja">
             <p class="black-text campos">Materia</p>
             <div class="input-field col s12">
-               <select class="icons" name="profesor">
+               <select class="icons" name="materia">
                <option value='' disabled selected >Escoja la materia</option>
-               <?php if ($result->num_rows > 0) {   
+               <?php
+               $sql = "SELECT * FROM `materias` ";
+               $result = $conn->query($sql);
                  while($row = $result->fetch_assoc()) {
                  echo "
-                   <option value='".$row['id']."' data-icon='Imagenes perfil/".$row['foto']."'>".$row['nombre'] .' '. $row['apellido']."</option>";
+                   <option value='".$row['Id_materia']."' data-icon='Imagenes perfil/".$row['Imagen_materia']."'>".$row['Nombre_materia'] ."</option>";
                 }
-            }   
+               
                 ?>
                 </select>
              </div>
@@ -81,10 +83,9 @@ $result = $conn->query($sql);
         $Id_materia=$_POST['materia'];
         $Id_estudiante=$_POST['estudiante'];
 
-        include('Subir_imagen.php');
     
-        $sql = "INSERT INTO `materias`( `Id_estudiante`, `Id_materia`) VALUES
-         ( '$Id_materia', '$Id_estudiante')";
+        $sql = "INSERT INTO `materias_asignadas`( `Id_Estudiante`, `Id_materia`) VALUES
+         ( '$Id_estudiante', '$Id_materia')";
     
         if ($conn->query($sql) === TRUE) {
             echo  "<div class='container center'>

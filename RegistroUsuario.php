@@ -15,7 +15,7 @@ if ($result->num_rows > 0) {
 <?php
   include ('head.php');
 ?>
-<title>Registro Usuarios por admin</title>
+<title>Plataforma Virtual Sysdatec</title>
 </head>
     <body>
       <?php
@@ -106,7 +106,7 @@ if ($result->num_rows > 0) {
             <div class="file-field input-field">
               <div class="btn btnfoto">
                 <span>Foto</span>
-                  <input type="file" name="imagen" size="20">
+                  <input type="file" name="imagen" size="20" required>
               </div>
               <div class="file-path-wrapper">
                 <input class="file-path validate" type="text" placeholder="Sube la foto del usuario">

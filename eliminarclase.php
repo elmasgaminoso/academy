@@ -1,14 +1,14 @@
 <?php
-session_start();
-$pagina="admin";
-include("validacion_sesion.php");
+ session_start();
+ $pagina="profesor";
+ include("Config.php");
+ include("validacion_sesion.php");
+
 if (isset($_GET['var'])){
 $id=$_GET['var'];	
 
-	include("Config.php")
-
 // sql to delete a record
-$sql= "DELETE FROM `usuarios` WHERE id='$id'";
+$sql = "DELETE FROM clases WHERE Id='$id'";
 
 if ($conn->query($sql) === TRUE) {
     echo "Record deleted successfully";
@@ -17,6 +17,6 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-	echo "<script> location='RegistrosUsuario.php';</script>";
+	echo "<script> location='p';</script>";
 }
 ?>

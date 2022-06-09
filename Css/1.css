@@ -579,3 +579,44 @@ lottie-player{
 .ingles{
     background-image: url("../img/Notas\ de\ ingles.jpg");
 }
+/*materias profe*/
+.materiasprofe{
+    margin-top: 20px;
+}
+/*logica profe*/
+.profe .vistarapida{
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.btnprofe{
+    padding-bottom: 30px;
+}
+.btnprofe a{
+    font-weight: 500;
+}
+.caja.clase{
+    width:100%!important;
+}
+.contenidoclase{
+    height: 200px;
+}
+.contenidoclase textarea{
+    border: none!important;
+}
+.profe .collapsible-header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.profe .profemateria .collapsible-header p{
+    width: 20%;
+}
+.profe .profemateria .collapsible-header a{
+    width: 5%;
+    padding: 10px!important;
+    text-align: center;
+}
+.profe .profemateria .collapsible-header a i{ 
+    padding: 0;
+    margin: 0;
+}
