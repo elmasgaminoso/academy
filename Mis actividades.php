@@ -46,6 +46,11 @@ session_start();
             <div class="row cajas">
             <?php $sql = "SELECT * FROM `materias_asignadas` WHERE  Id_Estudiante='$_SESSION[Id]' ";
                   $result = $conn->query($sql);
+                  $row = $result->fetch_assoc();
+                  for (x in $row){
+                      
+                  }:
+
                 while($row = $result->fetch_assoc()){
                     $materia = $row["Id_materia"];
                     $sql = "SELECT * FROM `materias` WHERE  Id_materia='$materia' ";
