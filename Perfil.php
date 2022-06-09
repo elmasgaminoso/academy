@@ -40,7 +40,7 @@ if ($conn->query($sql) === TRUE) {
     <?php
         include ('head.php');
     ?>
-<title>Documento sin título</title>
+<title>Plataforma Virtual Sysdatec</title>
 </head>
 <body >
   <?php

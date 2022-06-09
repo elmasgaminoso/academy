@@ -15,7 +15,7 @@ if ($result->num_rows > 0) {
 <?php
   include ('head.php');
 ?>
-<title>Registro Usuarios por admin</title>
+<title>Plataforma Virtual Sysdatec</title>
 </head>
     <body>
       <?php

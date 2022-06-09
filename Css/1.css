@@ -579,3 +579,27 @@ lottie-player{
 .ingles{
     background-image: url("../img/Notas\ de\ ingles.jpg");
 }
+/*materias profe*/
+.materiasprofe{
+    margin-top: 20px;
+}
+/*logica profe*/
+.profe .vistarapida{
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.btnprofe{
+    padding-bottom: 30px;
+}
+.btnprofe a{
+    font-weight: 500;
+}
+.caja.clase{
+    width:100%!important;
+}
+.contenidoclase{
+    height: 200px;
+}
+.contenidoclase textarea{
+    border: none!important;
+}

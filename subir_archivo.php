@@ -1,13 +1,5 @@
 <?php 
 include ('Config.php');
-    //campos database
-
-    $id = "";
-    $nombre_archivo="";
-    $tipo_archivo="";
-    $tamano_archivo="";
-    $direccion_archivo="";
-    $archivo="";
 
     // Recibir datos de imagen
 
@@ -22,7 +14,7 @@ include ('Config.php');
 
     //ruta de la carpeta de destino
 
-    $host_file = 'C:\xampp\htdocs\Academy\archivos/';
+    $host_file = 'C:\xampp\htdocs\academy\archivos/';
     //mueve archivos del dirctorio temporal al escogido
 
     move_uploaded_file($_FILES ['archivos'] ['tmp_name'], $host_file . $name_file);
@@ -42,14 +34,14 @@ include ('Config.php');
 
     //Trabajo con database
 
-    $sql = "INSERT INTO archivos (nombre_archivo, tipo_archivo, tamano_archivo, direccion_archivo, archivo) VALUES ('$name_file', '$type_file', $size_file, '$host_file', '$file')";
-    $resut = $conn->query($sql);
+    // $sql = "INSERT INTO archivos (nombre_archivo, tipo_archivo, tamano_archivo, direccion_archivo, archivo) VALUES ('$name_file', '$type_file', $size_file, '$host_file', '$file')";
+    // $resut = $conn->query($sql);
 
-    if (mysqli_affected_rows($conn)>0) {
-        echo 'se ha tenido éxito';
-    }else {
-        echo 'algo ha fallado';
-    }
+    // if (mysqli_affected_rows($conn)>0) {
+        // echo 'se ha tenido éxito';
+    // }else {
+        // echo 'algo ha fallado';
+    // }
 
     /*while ($fila=mysqli_fetch_assoc($resultado)) {
         $id = $fila ["id"];
