@@ -22,7 +22,7 @@ $Id_materia= $_SESSION['Id_materia'];
       <?php
         include ('header.php');
 	    ?> 
-      <div class="container registro"><a href=" .php"><i class="material-icons">keyboard_return</i></a></div>
+      <div class="container registro"><a href="<?php $_SESSION['direccion']?>"><i class="material-icons">keyboard_return</i></a></div>
       <div class="container registros">
         <div class="row center">
           <h1 class="fuente1">
