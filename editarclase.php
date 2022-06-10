@@ -21,13 +21,23 @@ $Id_materia= $_SESSION['Id_materia'];
     <body>
       <?php
         include ('header.php');
+        if (isset ($_GET['var'])){
+            $id=$_GET['var'];
+            
+          }
+          $sql = "SELECT * FROM clases WHERE id='$id' ";
+          $result = $conn->query($sql); 
+          
+            if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            }
 	    ?> 
       <div class="container registro"><a href="materiasasignadasprofesor.php"><i class="material-icons">keyboard_return</i></a></div>
       <div class="container registros">
         <div class="row center">
           <h1 class="fuente1">
             <span class="text-wrapper">
-              <span class="letters">Crear clase</span>
+              <span class="letters">Actualizar clase</span>
             </span>
           </h1>
         </div>
@@ -38,7 +48,7 @@ $Id_materia= $_SESSION['Id_materia'];
            <p class="black-text campos">Nombre de la clase:</p>
             <div class="input-field field">
                <i class="material-icons prefix">book</i>
-              <input placeholder="Escriba el nombre de la clase" id="first_name" type="text" class="validate" name="titulo" required>
+              <input placeholder="Escriba el nombre de la clase" id="first_name" type="text" class="validate" value="<?php echo $row['Nombre_clase'] ?>" name="titulo" required>
             </div>
           </div>
           </div>
@@ -47,7 +57,7 @@ $Id_materia= $_SESSION['Id_materia'];
             <p class="black-text campos">Contenido de la clase:</p>
             <div class="input-field field contenidoclase">
                <i class="material-icons prefix">import_contacts</i>
-               <textarea id="textarea1" class="materialize-textarea" placeholder="Escriba el contenido de la clase" name="contenido"></textarea>
+               <textarea id="textarea1" class="materialize-textarea" placeholder="Escriba el contenido de la clase" name="contenido"><?php echo $row['Info_clase'] ?></textarea>
             </div>
            </div>
           </div>
@@ -67,7 +77,7 @@ $Id_materia= $_SESSION['Id_materia'];
           </div>
             <div class="row registro1">
             <div class="left">
-             <a class="waves-effect waves-light btn-large shake-slow btninicio"><input type="submit" value="Crear clase" name="enviar"></input></a> 
+             <a class="waves-effect waves-light btn-large shake-slow btninicio"><input type="submit" value="Actualizar clase" name="enviar"></input></a> 
             </div>
           </div>
           </div>
@@ -79,13 +89,10 @@ $Id_materia= $_SESSION['Id_materia'];
         if (isset($_POST['enviar'])){  
         $titulo=$_POST['titulo'];
         $contenido=$_POST['contenido'];
-        if (isset ($_GET['var'])){
-            $id_materia=$_GET['var'];
-        }
+
         include('subir_archivo.php');
     
-        $sql = "INSERT INTO `clases`( `Nombre_clase`, `Info_clase`, `Archivo_clase`, `Id_materia`) VALUES
-         ( '$titulo', '$contenido','$name_file', '$Id_materia')";
+        $sql =  "UPDATE clases SET Nombre_clase='$titulo' ,Info_clase='$contenido', Archivo_clase='$name_file'";   
     
         if ($conn->query($sql) === TRUE) {
             echo  "  <div id='modal1' class='modal open' tabindex='0' style='z-index: 1003; display: block; opacity: 1; top: 10%; transform: scaleX(1) scaleY(1);'>

@@ -96,6 +96,7 @@ session_start();
                  <li>
                   <div class='collapsible-header'>
                     <p>".$row['Nombre_clase']."</p>
+                    <a href='editarclase.php?var=".$row["Id"]."'><i class='material-icons'>create</i></a>
                     <a href='eliminarclase.php?var=".$row["Id"]."'><i class='material-icons'>delete</i></a>
                   </div>
                   <div class='collapsible-body'>
