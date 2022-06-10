@@ -17,6 +17,6 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-	echo "<script> location='materiasasignada.php';</script>";
+	echo "<script> location='materiasasignadas.php';</script>";
 }
 ?>
