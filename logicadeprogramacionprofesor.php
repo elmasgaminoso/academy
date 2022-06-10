@@ -43,7 +43,9 @@ session_start();
           </div>
          </div>
          <?php 
-            $id_materia=2;
+          if (isset ($_GET['var'])){
+            $id_materia=$_GET['var'];
+            } 
             $_SESSION['Id_materia']=$id_materia;
             $sql = "SELECT * FROM `materias` WHERE  Id_materia='$_SESSION[Id_materia]' ";
             $result = $conn->query($sql);

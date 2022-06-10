@@ -60,7 +60,7 @@ $result = $conn->query($sql);
                $result = $conn->query($sql);
                  while($row = $result->fetch_assoc()) {
                  echo "
-                   <option value='".$row['Id_materia']."' data-icon='Imagenes perfil/".$row['Imagen_materia']."'>".$row['Nombre_materia'] ."</option>";
+                   <option value='".$row['Id_materia']."' data-icon='img/".$row['Imagen_materia']."'>".$row['Nombre_materia'] ."</option>";
                 }
                
                 ?>

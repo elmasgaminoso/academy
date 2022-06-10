@@ -38,7 +38,7 @@ $result = $conn->query($sql);
           <div class="col s5 caja">
            <p class="black-text campos">Nombre de materia:</p>
             <div class="input-field field">
-               <i class="material-icons prefix">account_circle</i>
+               <i class="material-icons prefix">import_contacts</i>
               <input placeholder="Escriba el nombre de la materia" id="first_name" type="text" class="validate" name="nombre" required>
             </div>
           </div>
@@ -57,16 +57,32 @@ $result = $conn->query($sql);
           </div>
           <div class="row">
           <div class="col s5 caja">
-           <p class="black-text campos">Dirección actividades:</p>
+           <p class="black-text campos">Dirección actividades Estudiantes:</p>
             <div class="input-field field">
-               <i class="material-icons prefix">account_circle</i>
+               <i class="material-icons prefix">insert_link</i>
+              <input placeholder="Escriba la dirección de Actividades" id="first_name" type="text" class="validate" name="actividades2" required>
+            </div>
+          </div>
+            <div class="col s5 caja">
+            <p class="black-text campos">Dirección notas Estudiantes:</p>
+            <div class="input-field field">
+               <i class="material-icons prefix">insert_link</i>
+              <input placeholder="Escriba la deirección de Notas" id="first_name" type="text" class="validate" name="notas2" required>
+            </div>
+           </div>
+          </div>
+          <div class="row">
+          <div class="col s5 caja">
+           <p class="black-text campos">Dirección actividades Profesores:</p>
+            <div class="input-field field">
+               <i class="material-icons prefix">insert_link</i>
               <input placeholder="Escriba la dirección de Actividades" id="first_name" type="text" class="validate" name="actividades" required>
             </div>
           </div>
             <div class="col s5 caja">
-            <p class="black-text campos">Dirección notas:</p>
+            <p class="black-text campos">Dirección notas Profesores:</p>
             <div class="input-field field">
-               <i class="material-icons prefix">account_circle</i>
+               <i class="material-icons prefix">insert_link</i>
               <input placeholder="Escriba la deirección de Notas" id="first_name" type="text" class="validate" name="notas" required>
             </div>
            </div>
@@ -103,11 +119,13 @@ $result = $conn->query($sql);
         $Id_profesor=$_POST['profesor'];
         $Notas=$_POST['notas'];
         $Actividades=$_POST['actividades'];
+        $Notas2=$_POST['notas2'];
+        $Actividades2=$_POST['actividades2'];
 
-        include('Subir_imagen.php');
+        include('Subir_imagenes.php');
     
-        $sql = "INSERT INTO `materias`( `Nombre_materia`, `Imagen_materia`, `Id_profesor`, `Direccion_notas`, `Direccion_actividades`) VALUES
-         ( '$Nombre_materia', '$nombre_archivo','$Id_profesor','$Notas', '$Actividades')";
+        $sql = "INSERT INTO `materias`( `Nombre_materia`, `Imagen_materia`, `Id_profesor`, `Direccion_notas`, `Direccion_actividades`,`Direccion_notasE`, `Direccion_actividadesE`) VALUES
+         ( '$Nombre_materia', '$nombre_archivo','$Id_profesor','$Notas', '$Actividades','$Notas2', '$Actividades2')";
     
         if ($conn->query($sql) === TRUE) {
             echo  "  <div id='modal1' class='modal open' tabindex='0' style='z-index: 1003; display: block; opacity: 1; top: 10%; transform: scaleX(1) scaleY(1);'>
