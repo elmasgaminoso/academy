@@ -673,3 +673,15 @@ lottie-player{
 .materiastabla{
     padding-bottom: 50px;
 }
+/* subir archivos clases*/
+.btnsubir a{
+    background-color: #35BD98;
+    border-radius: 10px;
+    text-transform: none;
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: 500;
+    width: fit-content;
+    margin-top: 45px;
+    margin-left: 20px;
+}

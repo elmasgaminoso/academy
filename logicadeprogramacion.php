@@ -127,9 +127,11 @@ session_start();
                   </div>
                   <div class='collapsible-body'>
                     <p>".$row['Info_clase']."</p>
-                    <div class='col s12 btnprofe'>
-                    <a class='waves-effect waves-light btn-large shake-slow  btninicio' href='crearclase.php'>Crear clase</a> 
-                  </div>   
+                    <div class='btnsubir'>
+                    <div class='file-field input-field'>
+                    <a class='waves-effect waves-light btn-large shake-slow  btninicio'>Subir archivo<input type='file' name='imagen' size='20' required></input></a>  
+                     </div>
+                    </div>   
                   </div>
                   </li>
                  </ul>
