@@ -39,7 +39,7 @@ $result = $conn->query($sql);
            <p class="black-text campos">Nombre de materia:</p>
             <div class="input-field field">
                <i class="material-icons prefix">account_circle</i>
-              <input placeholder="Escriba el nombre de la materia" id="first_name" type="text" class="validate" name="nombre">
+              <input placeholder="Escriba el nombre de la materia" id="first_name" type="text" class="validate" name="nombre" required>
             </div>
           </div>
             <div class="col s5 caja">
@@ -60,14 +60,14 @@ $result = $conn->query($sql);
            <p class="black-text campos">Dirección actividades:</p>
             <div class="input-field field">
                <i class="material-icons prefix">account_circle</i>
-              <input placeholder="Escriba la dirección de Actividades" id="first_name" type="text" class="validate" name="actividades">
+              <input placeholder="Escriba la dirección de Actividades" id="first_name" type="text" class="validate" name="actividades" required>
             </div>
           </div>
             <div class="col s5 caja">
             <p class="black-text campos">Dirección notas:</p>
             <div class="input-field field">
                <i class="material-icons prefix">account_circle</i>
-              <input placeholder="Escriba la deirección de Notas" id="first_name" type="text" class="validate" name="notas">
+              <input placeholder="Escriba la deirección de Notas" id="first_name" type="text" class="validate" name="notas" required>
             </div>
            </div>
           </div>
@@ -75,7 +75,7 @@ $result = $conn->query($sql);
            <div class="col s6 caja">
             <p class="black-text campos">Profesor de la materia</p>
             <div class="input-field col s12">
-               <select class="icons" name="profesor">
+               <select class="icons" name="profesor" required>
                <option value='' disabled selected >Escoja al profesor</option>
                <?php   
                  while($row = $result->fetch_assoc()) {
@@ -110,13 +110,21 @@ $result = $conn->query($sql);
          ( '$Nombre_materia', '$nombre_archivo','$Id_profesor','$Notas', '$Actividades')";
     
         if ($conn->query($sql) === TRUE) {
-            echo  "<div class='container center'>
-     <h4>Nueva Materia registrada </h4>
-    </div>";
+            echo  "  <div id='modal1' class='modal open' tabindex='0' style='z-index: 1003; display: block; opacity: 1; top: 10%; transform: scaleX(1) scaleY(1);'>
+            <div class='modal-content center'>
+              <h4 class='incorrecto'>Nuevo Materia Registrada</h4>
+              <a href='' class='waves-effect waves-light btn-large shake-slow btninicio modal-close'>Continuar</a>
+            </div>
+          </div>
+          <div class='modal-overlay' style='z-index: 1002; display: block; opacity: 0.5;'></div>";
         } else {
-            echo  "<div class='container center'>
-     <h4>Error al registrar usuario</h4>
-    </div>";
+            echo  "  <div id='modal1' class='modal open' tabindex='0' style='z-index: 1003; display: block; opacity: 1; top: 10%; transform: scaleX(1) scaleY(1);'>
+            <div class='modal-content center'>
+              <h4 class='incorrecto'>Error al registrar la materia</h4>
+              <a href='' class='waves-effect waves-light btn-large shake-slow btninicio modal-close'>Reintentar</a>
+            </div>
+          </div>
+          <div class='modal-overlay' style='z-index: 1002; display: block; opacity: 0.5;'></div>";
         }
     
         $conn->close();
@@ -127,17 +135,6 @@ $result = $conn->query($sql);
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 	<script type="text/javascript">
      M.AutoInit();
-	$(document).ready(function(){
-    $('.datepicker').datepicker();
-  });
-      	$(document).ready(function(){
-    $('.parallax').parallax();
-  });
-  $(document).ready(function() {
-    $('input#input_text, textarea#textarea2').characterCounter();
-  });
-      
-	 $('.dropdown-trigger').dropdown();	
 		</script>
     </body>
 </html>

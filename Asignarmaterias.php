@@ -38,7 +38,7 @@ $result = $conn->query($sql);
           <div class="col s6 caja">
            <p class="black-text campos">Asignar estudiante:</p>
            <div class="input-field col s12">
-               <select class="icons" name="estudiante">
+               <select class="icons" name="estudiante" required>
                <option value='' disabled selected >Escoja al estudiante</option>
                <?php    
                  while($row = $result->fetch_assoc()) {
@@ -53,7 +53,7 @@ $result = $conn->query($sql);
           <div class="col s6 caja">
             <p class="black-text campos">Materia</p>
             <div class="input-field col s12">
-               <select class="icons" name="materia">
+               <select class="icons" name="materia" required>
                <option value='' disabled selected >Escoja la materia</option>
                <?php
                $sql = "SELECT * FROM `materias` ";
@@ -88,13 +88,21 @@ $result = $conn->query($sql);
          ( '$Id_estudiante', '$Id_materia')";
     
         if ($conn->query($sql) === TRUE) {
-            echo  "<div class='container center'>
-     <h4>Nuevo Usuario registrado </h4>
-    </div>";
+            echo  "  <div id='modal1' class='modal open' tabindex='0' style='z-index: 1003; display: block; opacity: 1; top: 10%; transform: scaleX(1) scaleY(1);'>
+            <div class='modal-content center'>
+              <h4 class='incorrecto'>Materia Asignada</h4>
+              <a href='' class='waves-effect waves-light btn-large shake-slow btninicio modal-close'>Continuar</a>
+            </div>
+          </div>
+          <div class='modal-overlay' style='z-index: 1002; display: block; opacity: 0.5;'></div>";
         } else {
-            echo  "<div class='container center'>
-     <h4>Error al registrar usuario</h4>
-    </div>";
+            echo  "  <div id='modal1' class='modal open' tabindex='0' style='z-index: 1003; display: block; opacity: 1; top: 10%; transform: scaleX(1) scaleY(1);'>
+            <div class='modal-content center'>
+              <h4 class='incorrecto'>Error al asignar materia</h4>
+              <a href='' class='waves-effect waves-light btn-large shake-slow btninicio modal-close'>Reintentar</a>
+            </div>
+          </div>
+          <div class='modal-overlay' style='z-index: 1002; display: block; opacity: 0.5;'></div>";
         }
     
         $conn->close();
@@ -105,17 +113,6 @@ $result = $conn->query($sql);
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 	<script type="text/javascript">
      M.AutoInit();
-	$(document).ready(function(){
-    $('.datepicker').datepicker();
-  });
-      	$(document).ready(function(){
-    $('.parallax').parallax();
-  });
-  $(document).ready(function() {
-    $('input#input_text, textarea#textarea2').characterCounter();
-  });
-      
-	 $('.dropdown-trigger').dropdown();	
 		</script>
     </body>
 </html>

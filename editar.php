@@ -3,45 +3,10 @@
  $pagina="admin";
  include("Config.php");
  include("validacion_sesion.php");
-if (isset ($_POST['modificar'])){
-	$id=$_POST['id'];
-	$usuario=$_POST['usuario'];
-	$clave=$_POST['clave'];
-	$correo=$_POST['correo'];
-	$telefono=$_POST['telefono'];
-	$nombre=$_POST['nombre'];
-  $apellido=$_POST['apellido'];
-	$fechanac=$_POST['fechadenac'];
-	$nivel=$_POST['nivel'];
-
-  include('Subir_imagen.php');
-
-$sql = "UPDATE usuarios SET foto='$nombre_archivo' ,usuario='$usuario',clave='$clave',correo='$correo',telefono='$telefono',nombre='$nombre',apellido='$apellido',`fecha de nacimiento`='$fechanac',nivel='$nivel'  WHERE id='$id'";
-
-if ($conn->query($sql) === TRUE) {
-    echo "Record updated successfully";
-} else {
-    echo "Error updating record: " . $conn->error;
-}
-$sql = "SELECT * FROM usuarios WHERE id='$id'";
-$result = $conn->query($sql); 
-
+ $sql = "SELECT * FROM `usuarios` WHERE  id='$_SESSION[Id]' ";
+$result = $conn->query($sql);
 if ($result->num_rows > 0) {
 	$row = $result->fetch_assoc();
-}
-echo "<script> location='RegistrosUsuario.php';</script>";	
-}
-
-if (isset ($_GET['var'])){
-	$id=$_GET['var'];
-
-$sql = "SELECT * FROM usuarios WHERE id='$id' ";
-$result = $conn->query($sql); 
-
-	if ($result->num_rows > 0) {
-	$row = $result->fetch_assoc();
-	}
-	
 }
 ?>
 <!doctype html>
@@ -55,7 +20,18 @@ $result = $conn->query($sql);
 <body >
   <?php
         include ('header.php');
-	    ?> 
+        if (isset ($_GET['var'])){
+          $id=$_GET['var'];
+        
+        $sql = "SELECT * FROM usuarios WHERE id='$id' ";
+        $result = $conn->query($sql); 
+        
+          if ($result->num_rows > 0) {
+          $row = $result->fetch_assoc();
+          }
+          
+        } 
+	    ?>
   <div class="container registro"><a href="RegistrosUsuario.php"><i class="material-icons">keyboard_return</i></a></div>
   <div class="container registros">
         <div class="row center">
@@ -157,7 +133,7 @@ $result = $conn->query($sql);
             </div>
             <div class="row registro1">
             <div class="left">
-             <a class="waves-effect waves-light btn-large shake-slow btninicio"><input type="submit" value="Modificar datos" name="modificar"></input></a> 
+             <a class="waves-effect waves-light btn-large shake-slow btninicio modal-trigger" href="#modal1"><input type="submit" value="Modificar datos" name="modificar"></input></a> 
             </div>
           </div>
           </form>
@@ -165,15 +141,46 @@ $result = $conn->query($sql);
         </div>
 	</div>
 </body>
+<?php 
+if (isset ($_POST['modificar'])){
+  $id=$_POST['id'];
+  $usuario=$_POST['usuario'];
+  $clave=$_POST['clave'];
+  $correo=$_POST['correo'];
+  $telefono=$_POST['telefono'];
+  $nombre=$_POST['nombre'];
+  $apellido=$_POST['apellido'];
+  $fechanac=$_POST['fechadenac'];
+  $nivel=$_POST['nivel'];
+
+  include('Subir_imagen.php');
+  
+$sql = "UPDATE usuarios SET foto='$nombre_archivo' ,usuario='$usuario',clave='$clave',correo='$correo',telefono='$telefono',nombre='$nombre',apellido='$apellido',`fecha de nacimiento`='$fechanac',nivel='$nivel'  WHERE id='$id'";
+if ($conn->query($sql) === TRUE) {
+  echo "  <div id='modal1' class='modal open' tabindex='0' style='z-index: 1003; display: block; opacity: 1; top: 10%; transform: scaleX(1) scaleY(1);'>
+  <div class='modal-content center'>
+    <h4 class='incorrecto'>Datos Actualizados</h4>
+    <a href='RegistrosUsuario.php' class='waves-effect waves-light btn-large shake-slow btninicio modal-close'>Continuar</a>
+  </div>
+</div>
+<div class='modal-overlay' style='z-index: 1002; display: block; opacity: 0.5;'></div>";
+} else {
+  echo  "  <div id='modal1' class='modal open' tabindex='0' style='z-index: 1003; display: block; opacity: 1; top: 10%; transform: scaleX(1) scaleY(1);'>
+  <div class='modal-content center'>
+    <h4 class='incorrecto'>Error al actualizar los datos</h4>
+    <a href='' class='waves-effect waves-light btn-large shake-slow btninicio modal-close'>Reintentar</a>
+  </div>
+</div>
+<div class='modal-overlay' style='z-index: 1002; display: block; opacity: 0.5;'></div>";
+}
+$conn->close();
+
+}
+?>
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 	<script type="text/javascript">
 	 M.AutoInit();
-$(".dropdown-trigger").dropdown();
-	$(document).ready(function(){
-    $('.datepicker').datepicker();
-  });
-      	
 		
 		</script>
 </html>

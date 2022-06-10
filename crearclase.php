@@ -22,7 +22,7 @@ $Id_materia= $_SESSION['Id_materia'];
       <?php
         include ('header.php');
 	    ?> 
-      <div class="container registro"><a href="<?php $_SESSION['direccion']?>"><i class="material-icons">keyboard_return</i></a></div>
+      <div class="container registro"><a href="<?php echo $_SESSION['direccion']?>"><i class="material-icons">keyboard_return</i></a></div>
       <div class="container registros">
         <div class="row center">
           <h1 class="fuente1">
@@ -38,7 +38,7 @@ $Id_materia= $_SESSION['Id_materia'];
            <p class="black-text campos">Nombre de la clase:</p>
             <div class="input-field field">
                <i class="material-icons prefix">book</i>
-              <input placeholder="Escriba el nombre de la clase" id="first_name" type="text" class="validate" name="titulo">
+              <input placeholder="Escriba el nombre de la clase" id="first_name" type="text" class="validate" name="titulo" required>
             </div>
           </div>
           </div>
@@ -88,13 +88,21 @@ $Id_materia= $_SESSION['Id_materia'];
          ( '$titulo', '$contenido','$name_file', '$Id_materia')";
     
         if ($conn->query($sql) === TRUE) {
-            echo  "<div class='container center'>
-     <h4>Nuevo Usuario registrado </h4>
-    </div>";
+            echo  "  <div id='modal1' class='modal open' tabindex='0' style='z-index: 1003; display: block; opacity: 1; top: 10%; transform: scaleX(1) scaleY(1);'>
+            <div class='modal-content center'>
+              <h4 class='incorrecto'>Clase creada</h4>
+              <a href='' class='waves-effect waves-light btn-large shake-slow btninicio modal-close'>Continuar</a>
+            </div>
+          </div>
+          <div class='modal-overlay' style='z-index: 1002; display: block; opacity: 0.5;'></div>";
         } else {
-            echo  "<div class='container center'>
-     <h4>Error al registrar usuario</h4>
-    </div>";
+            echo  "  <div id='modal1' class='modal open' tabindex='0' style='z-index: 1003; display: block; opacity: 1; top: 10%; transform: scaleX(1) scaleY(1);'>
+            <div class='modal-content center'>
+              <h4 class='incorrecto'>Error al crear la clase</h4>
+              <a href='' class='waves-effect waves-light btn-large shake-slow btninicio modal-close'>Continuar</a>
+            </div>
+          </div>
+          <div class='modal-overlay' style='z-index: 1002; display: block; opacity: 0.5;'></div>";
         }
     
         $conn->close();

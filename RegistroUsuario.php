@@ -37,14 +37,14 @@ if ($result->num_rows > 0) {
            <p class="black-text campos">Usuario:</p>
             <div class="input-field field">
                <i class="material-icons prefix">account_circle</i>
-              <input placeholder="Usuario" id="first_name" type="text" class="validate" name="usuario">
+              <input placeholder="Usuario" id="first_name" type="text" class="validate" name="usuario"required>
             </div>
           </div>
             <div class="col s5 caja">
               <p class="black-text campos">Nombre:</p>
               <div class="input-field field">
                <i class="material-icons prefix">account_circle</i>
-              <input placeholder="Nombre"id="last_name" type="text" class="validate" name="nombre">
+              <input placeholder="Nombre"id="last_name" type="text" class="validate" name="nombre" required>
             </div>
            </div>
           </div>
@@ -53,14 +53,14 @@ if ($result->num_rows > 0) {
             <p class="black-text campos">Apellidos:</p>
             <div class="input-field field">
                <i class="material-icons prefix">account_circle</i>
-              <input placeholder="Apellidos"id="last_name" type="text" class="validate" name="apellido">
+              <input placeholder="Apellidos"id="last_name" type="text" class="validate" name="apellido" required>
             </div>
            </div>
             <div class="col s5 caja">
              <p class="black-text campos">Correo electroníco:</p>
              <div class="input-field field">
               <i class="material-icons prefix">email</i>
-              <input id="email" type="email" class="validate" name="email" placeholder="Correo electroníco">
+              <input id="email" type="email" class="validate" name="email" placeholder="Correo electroníco" required>
             </div>
            </div>
           </div>
@@ -69,14 +69,14 @@ if ($result->num_rows > 0) {
              <p class="black-text campos">Contraseña:</p>
                <div class="input-field field">
                <i class="material-icons prefix">vpn_key</i>
-              <input placeholder="Contraseña" id="password" type="password"class="validate" name="clave">
+              <input placeholder="Contraseña" id="password" type="password"class="validate" name="clave" required>
             </div>
           </div>
           <div class="col s5 caja">
             <p class="black-text campos">Telefono:</p>
             <div class="input-field field">
               <i class="material-icons prefix">phone</i>
-              <input id="icon_telephone" type="number" class="validate" name="telefono" placeholder="Telefono">
+              <input id="icon_telephone" type="number" class="validate" name="telefono" placeholder="Telefono" required>
              </div>
             </div>
           </div>
@@ -85,7 +85,7 @@ if ($result->num_rows > 0) {
             <p class="black-text campos">Fecha de nacimiento:</p>
             <div class="input-field field">
                <i class="material-icons prefix">perm_contact_calendar</i>
-                <input id="calendario" type="date"  name="fechanac">
+                <input id="calendario" type="date"  name="fechanac" required>
               </div>
             </div>
                <div class="input-field col s1 genero">
@@ -119,7 +119,7 @@ if ($result->num_rows > 0) {
               <p class="black-text campos">Nivel:</p>
              <div class="input-field field">
                <i class="material-icons prefix">timeline</i>
-              <input placeholder="Nivel" id="tel" type="text" class="validate" name="nivel">
+              <input placeholder="Nivel" id="tel" type="text" class="validate" name="nivel" required>
               </div>
              </div>
             </div>
@@ -132,7 +132,7 @@ if ($result->num_rows > 0) {
             </div>
             <div class="row registro1">
             <div class="left">
-             <a class="waves-effect waves-light btn-large shake-slow btninicio"><input type="submit" value="Registrar usuario" name="enviar"></input></a> 
+             <a class="waves-effect waves-light btn-large shake-slow btninicio modal-trigger" href="#modal1"><input type="submit" value="Registrar usuario" name="enviar"></input></a> 
             </div>
           </div>
           </div>
@@ -158,13 +158,21 @@ if ($result->num_rows > 0) {
          ( '$archivo_objetivo', '$nombre_archivo','$usuario', '$clave', '$email', '$telefono', '$nombre','$email', '$fechanac','$genero', '$nivel')";
     
         if ($conn->query($sql) === TRUE) {
-            echo  "<div class='container center'>
-     <h4>Nuevo Usuario registrado </h4>
-    </div>";
+            echo "  <div id='modal1' class='modal open' tabindex='0' style='z-index: 1003; display: block; opacity: 1; top: 10%; transform: scaleX(1) scaleY(1);'>
+            <div class='modal-content center'>
+              <h4 class='incorrecto'>Nuevo usuario registrado</h4>
+              <a href='RegistrosUsuario.php' class='waves-effect waves-light btn-large shake-slow btninicio modal-close'>Continuar</a>
+            </div>
+          </div>
+          <div class='modal-overlay' style='z-index: 1002; display: block; opacity: 0.5;'></div>";
         } else {
-            echo  "<div class='container center'>
-     <h4>Error al registrar usuario</h4>
-    </div>";
+            echo  "  <div id='modal1' class='modal open' tabindex='0' style='z-index: 1003; display: block; opacity: 1; top: 10%; transform: scaleX(1) scaleY(1);'>
+            <div class='modal-content center'>
+              <h4 class='incorrecto'>Error al registrar usuario</h4>
+              <a href='RegistrosUsuario.php' class='waves-effect waves-light btn-large shake-slow btninicio modal-close'>Reintentar</a>
+            </div>
+          </div>
+          <div class='modal-overlay' style='z-index: 1002; display: block; opacity: 0.5;'></div>";
         }
     
         $conn->close();
@@ -174,17 +182,7 @@ if ($result->num_rows > 0) {
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 	<script type="text/javascript">
-	$(document).ready(function(){
-    $('.datepicker').datepicker();
-  });
-      	$(document).ready(function(){
-    $('.parallax').parallax();
-  });
-  $(document).ready(function() {
-    $('input#input_text, textarea#textarea2').characterCounter();
-  });
-      
-	 $('.dropdown-trigger').dropdown();	
+	  M.AutoInit();
 		</script>
     </body>
 </html>

@@ -15,7 +15,7 @@ if ($result->num_rows > 0) {
     <?php
         include ('head.php');
     ?>
-<title>Documento sin título</title>
+<title>Plataforma Virtual Sysdatec</title>
 </head>
 
 <body>	
