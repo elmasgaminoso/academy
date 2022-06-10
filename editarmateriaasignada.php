@@ -8,8 +8,6 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
 	$row = $result->fetch_assoc();
 }
-$sql= "SELECT `id`,`foto`,`nombre`,`apellido` FROM `usuarios` WHERE `nivel`= 1";
-$result = $conn->query($sql);
 ?>
 <!doctype html>
 <html>
@@ -22,13 +20,24 @@ $result = $conn->query($sql);
     <body>
       <?php
         include ('header.php');
+        if (isset ($_GET['var'])){
+            $id=$_GET['var'];
+          
+          $sql = "SELECT * FROM materias_asignadas WHERE Id_materia='$id' ";
+          $result = $conn->query($sql); 
+          
+            if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            }
+            
+          } 
 	    ?> 
-      <div class="container registro"><a href="InicioAdmin.php"><i class="material-icons">keyboard_return</i></a></div>
+      <div class="container registro"><a href="materiasasignadas.php"><i class="material-icons">keyboard_return</i></a></div>
       <div class="container registros">
         <div class="row center">
           <h1 class="fuente1">
             <span class="text-wrapper">
-              <span class="letters">Asignar materia</span>
+              <span class="letters">Editar materia asignada</span>
             </span>
           </h1>
         </div>  
@@ -40,7 +49,9 @@ $result = $conn->query($sql);
            <div class="input-field col s12">
                <select class="icons" name="estudiante" required>
                <option value='' disabled selected >Escoja al estudiante</option>
-               <?php    
+               <?php
+               $sql= "SELECT `id`,`foto`,`nombre`,`apellido` FROM `usuarios` WHERE `nivel`= 1";
+               $result = $conn->query($sql);
                  while($row = $result->fetch_assoc()) {
                  echo "
                    <option value='".$row['id']."' data-icon='Imagenes perfil/".$row['foto']."'>".$row['nombre'] .' '. $row['apellido']."</option>";
@@ -70,7 +81,7 @@ $result = $conn->query($sql);
           </div>
             <div class="row registro1">
             <div class="left">
-             <a class="waves-effect waves-light btn-large shake-slow btninicio"><input type="submit" value="Asignar materia" name="enviar"></input></a> 
+             <a class="waves-effect waves-light btn-large shake-slow btninicio"><input type="submit" value="Actualizar materia asignada" name="enviar"></input></a> 
             </div>
           </div>
           </div>
@@ -84,13 +95,12 @@ $result = $conn->query($sql);
         $Id_estudiante=$_POST['estudiante'];
 
     
-        $sql = "INSERT INTO `materias_asignadas`( `Id_Estudiante`, `Id_materia`) VALUES
-         ( '$Id_estudiante', '$Id_materia')";
+        $sql =  "UPDATE materias_asignadas SET Id_materia='$Id_materia' ,Id_estudiante='$Id_estudiante' WHERE Id_materia='$id'";
     
         if ($conn->query($sql) === TRUE) {
             echo  "  <div id='modal1' class='modal open' tabindex='0' style='z-index: 1003; display: block; opacity: 1; top: 10%; transform: scaleX(1) scaleY(1);'>
             <div class='modal-content center'>
-              <h4 class='incorrecto'>Materia Asignada</h4>
+              <h4 class='incorrecto'>Materia asignada actualizada</h4>
               <a href='' class='waves-effect waves-light btn-large shake-slow btninicio modal-close'>Continuar</a>
             </div>
           </div>
@@ -98,7 +108,7 @@ $result = $conn->query($sql);
         } else {
             echo  "  <div id='modal1' class='modal open' tabindex='0' style='z-index: 1003; display: block; opacity: 1; top: 10%; transform: scaleX(1) scaleY(1);'>
             <div class='modal-content center'>
-              <h4 class='incorrecto'>Error al asignar materia</h4>
+              <h4 class='incorrecto'>Error al actualizar la materia asignada</h4>
               <a href='' class='waves-effect waves-light btn-large shake-slow btninicio modal-close'>Reintentar</a>
             </div>
           </div>

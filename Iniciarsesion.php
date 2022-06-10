@@ -29,7 +29,7 @@
           <input placeholder=" Contraseña " id="first_name" type="password" class="validate black-text" name="clave">
         </div>
 		  <div class=" right">
-        <a class="waves-effect waves-light btn-large shake-slow btninicio"><input type="submit" value="¡Iniciar sesión!" name="buscar"></input></a> 
+        <a class="waves-effect waves-light btn-large shake-slow btninicio modal-trigger" href="#modal1"><input type="submit" value="¡Iniciar sesión!" name="buscar"></input></a> 
       </div>
       </div>
     </div>
@@ -67,27 +67,19 @@ if (isset ($_POST['buscar'])){
                echo"<script> location='InicioEstudiante.php';</script>";
 	          }
       }else{
-        echo  "<div class='container center'>
-        <h4>Datos incorrectos </h4><br><br>";
-        echo "<a href='' class='waves-effect waves-light btn-large shake-slow grey'> REINTENTAR  </a>
-        </div>";
+        echo   "  <div id='modal1' class='modal'>
+        <div class='modal-content center'>
+          <h4 class='incorrecto'>Datos incorrectos </h4>
+          <a href='' class='waves-effect waves-light btn-large shake-slow btninicio'> Reintentar</a>
+        </div>
+      </div>";
     }
   }
 ?>
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 	<script type="text/javascript">
-	$(document).ready(function(){
-    $('.datepicker').datepicker();
-  });
-      	$(document).ready(function(){
-    $('.parallax').parallax();
-  });
-  $(document).ready(function() {
-    $('input#input_text, textarea#textarea2').characterCounter();
-  });
-      
-	 $('.dropdown-trigger').dropdown();	
+    M.AutoInit();
 		</script>
   </body>
 </html>

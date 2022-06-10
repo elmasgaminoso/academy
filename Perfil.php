@@ -25,11 +25,22 @@ if (isset ($_POST['modificar'])){
 $sql = "UPDATE usuarios SET foto='$nombre_archivo' ,clave='$clave',correo='$correo',telefono='$telefono',nombre='$nombre',apellido='$apellido',`fecha de nacimiento`='$fechanac' WHERE id='$_SESSION[Id]'";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Datos actualizados";
-    header("Location: perfil.php");
+  echo "  <div id='modal1' class='modal open' tabindex='0' style='z-index: 1003; display: block; opacity: 1; top: 10%; transform: scaleX(1) scaleY(1);'>
+            <div class='modal-content center'>
+              <h4 class='incorrecto'>Datos actualizados</h4>
+              <a href='' class='waves-effect waves-light btn-large shake-slow btninicio modal-close'>Continuar</a>
+            </div>
+          </div>
+          <div class='modal-overlay' style='z-index: 1002; display: block; opacity: 0.5;'></div>";
 
 } else {
-    echo "Error en actualizar los datos" . $conn->error;
+    echo "  <div id='modal1' class='modal open' tabindex='0' style='z-index: 1003; display: block; opacity: 1; top: 10%; transform: scaleX(1) scaleY(1);'>
+    <div class='modal-content center'>
+      <h4 class='incorrecto'>Error al actualizar los datos</h4>
+      <a href='' class='waves-effect waves-light btn-large shake-slow btninicio modal-close'>Reintentar</a>
+    </div>
+  </div>
+  <div class='modal-overlay' style='z-index: 1002; display: block; opacity: 0.5;'></div>" . $conn->error;
 }	
 } 
 

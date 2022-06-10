@@ -60,7 +60,7 @@
                     </a>
                 </div>
                 <div class="col l6 caja_vista ">
-                    <a href="Materias.php">
+                    <a href="materiasasignadas.php">
                     <svg xmlns="http://www.w3.org/2000/svg" width="55" height="84" viewBox="0 0 74 84" fill="none"><path d="M74 55.125V7.875C74 3.5257 70.4487 0 66.0714 0H58.1429V31.3523C58.1429 33.5524 55.5793 34.778 53.9969 33.4015L44.9286 26.25L35.8603 33.5508C34.2746 34.9125 31.7143 33.6984 31.7143 31.3523V0H15.8571C7.09937 0 0 7.05141 0 15.75V68.25C0 76.9486 7.09937 84 15.8571 84H68.7143C71.633 84 74 81.649 74 78.75C74 76.8272 72.9087 75.2194 71.3571 74.3039V60.9558C72.9759 59.5219 74 57.4547 74 55.125V55.125ZM63.4286 73.5H15.8571C12.9384 73.5 10.5714 71.149 10.5714 68.25C10.5714 65.351 12.9384 63 15.8571 63H63.4286V73.5Z" fill="url(#paint0_linear_305_445)"></path><defs><linearGradient id="paint0_linear_305_445" x1="0" y1="42" x2="73.9988" y2="42" gradientUnits="userSpaceOnUse"><stop stop-color="#42BFE6"></stop><stop offset="1" stop-color="#34BC83"></stop></linearGradient></defs></svg>
                     <p>Tablas de materias asignadas</p>
                     </a>
