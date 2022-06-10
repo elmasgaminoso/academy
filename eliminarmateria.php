@@ -1,6 +1,6 @@
 <?php
  session_start();
- $pagina="profesor";
+ $pagina="admin";
  include("Config.php");
  include("validacion_sesion.php");
 
@@ -8,7 +8,7 @@ if (isset($_GET['var'])){
 $id=$_GET['var'];	
 
 // sql to delete a record
-$sql = "DELETE FROM clases WHERE Id='$id'";
+$sql = "DELETE FROM materias WHERE Id_materia='$id'";
 
 if ($conn->query($sql) === TRUE) {
     echo "Record deleted successfully";
@@ -17,6 +17,6 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-	echo "<script> location='materiasasignadasprofesor.php';</script>";
+	echo "<script> location='Materias.php';</script>";
 }
 ?>
